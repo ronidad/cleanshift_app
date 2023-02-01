@@ -7,7 +7,6 @@ import RegisterUser from "./components/pages/RegisterUser.vue";
 import HomePage from "./components/pages/HomePage.vue";
 import UserProfile from "./components/pages/UserProfile.vue";
 import DashBoard from "./components/pages/DashBoard";
-import TestHome from "./components/pages/TestHome";
 import Clients from "./components/pages/clients";
 import RegisterCourt from "./components/pages/RegisterCourt";
 import RegisterClient from "./components/pages/RegisterClient";
@@ -18,7 +17,7 @@ import Reports from "./components/pages/reports";
 import Courts from "./components/pages/courts";
 import ClientPayments from "./components/pages/ClientPayments";
 
-import store from './store'
+// import store from './store'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -29,7 +28,7 @@ const router = createRouter({
     { path: "/profile", component: UserProfile, meta: { auth: true } },
     { path: "/dashboard", component: DashBoard, meta: { auth: true }  },
     { path: "/apps", component: DashBoard, meta: { auth: true }  },
-    { path: "/test", component: TestHome },
+    
     { path: "/reports", component: Reports, meta: { auth: true }  },
     {
       path: "/register/clients",
@@ -48,19 +47,19 @@ const router = createRouter({
     { path: "/client/payments/:client", component: ClientPayments, meta: { auth: true }  },
   ],
 });
-router.beforeEach((to, from, next) => {
-  if (to.meta.auth && !store.getters.isLoggedIn )
-  {
-    next('login')
+// router.beforeEach((to, from, next) => {
+//   if (to.meta.auth && !store.getters.isLoggedIn )
+//   {
+//     next('login')
 
-  } else  if ( !to.meta.auth && store.getters.isLoggedIn)
-  {
-    next('apps')
+//   } else  if ( !to.meta.auth && store.getters.isLoggedIn)
+//   {
+//     next('apps')
 
-  }
+//   }
 
-  else next()
-})
+//   else next()
+// })
 // router.beforeEach((to, from, next)=>{
 //   if 
 //   (

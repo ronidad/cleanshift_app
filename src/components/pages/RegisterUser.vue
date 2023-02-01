@@ -1,4 +1,5 @@
 <template>
+<div>
 <base-card>
 
   <h2>Signup Here</h2>
@@ -23,6 +24,7 @@
     <base-button>Submit</base-button>
   </form>
   </base-card>
+</div>
 </template>
 
 <script>
