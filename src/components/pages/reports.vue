@@ -1,4 +1,5 @@
 <template>
+  <div>
   <the-headersider></the-headersider>
 
   <section>
@@ -33,6 +34,7 @@
   <button @click="downloadPDF">Download</button>
  <!-- <button @click="generateTable">new pdf</button> -->
   </section>
+</div>
 </template>
 
 <script>
