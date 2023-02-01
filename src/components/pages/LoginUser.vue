@@ -1,4 +1,5 @@
 <template>
+  <div>
   
 <base-card>
 
@@ -18,6 +19,7 @@
     <base-button>Login</base-button>
   </form>
   </base-card>
+</div>
 </template>
 
 <script>

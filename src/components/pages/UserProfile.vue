@@ -1,4 +1,5 @@
 <template>
+  <div>
 <the-headersider></the-headersider>
   <div>
        <base-card>
@@ -11,6 +12,7 @@
     <!-- <router-link v-if="!isLoggedIn" to="/login"><button>Login</button></router-link> -->
   </base-card>
   </div>
+</div>
 </template>
 <script>
 // import axios from "axios";
