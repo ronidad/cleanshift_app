@@ -1,4 +1,5 @@
 <template>
+    <div>
     <the-headersider></the-headersider>
     <base-card>
 <table class="table table-striped table-bordered">
@@ -24,6 +25,7 @@
     
 </base-card>
 <router-link to="/register/clients">Register clients</router-link>
+</div>
 </template>
 <script>
 
