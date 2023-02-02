@@ -87,7 +87,7 @@ export default {
     // },
   methods: {
     async createClient(){
-      const response = await axios.post("https://api.roberms.com/client/registration/", this.formData)
+      const response = await axios.post("https://172.105.101.77:90/client/registration/", this.formData)
       console.log(response)
    
         this.$router.replace('/clients');

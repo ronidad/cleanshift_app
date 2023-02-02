@@ -58,7 +58,7 @@ export default {
     // },
   methods: {
     async createDriver(){
-      const response = await axios.post("https://api.roberms.com/court/registration/", this.formData)
+      const response = await axios.post("https://172.105.101.77:90/court/registration/", this.formData)
       console.log(response)
    
         this.$router.replace('/courts');

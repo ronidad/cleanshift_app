@@ -102,7 +102,7 @@ export default {
     // },
   methods: {
     async createPayment(){
-      const response = await axios.post("https://api.roberms.com/receive/payment/", this.formData)
+      const response = await axios.post("https://172.105.101.77:90/receive/payment/", this.formData)
       console.log(response)
    
         this.$router.replace('/payments');

@@ -104,7 +104,7 @@ const store = createStore({
     },
 
     async LoadCourts(context) {
-      const url = `http://167.235.239.71:81/get/courts`;
+      const url = `http://172.105.101.77:90/get/courts`;
 
       const response = await fetch(url, {
         mode: "cors",
@@ -130,7 +130,7 @@ const store = createStore({
       context.commit("setCourts", courts);
     },
     async LoadClients(context) {
-      const url = `http://167.235.239.71:81/get/clients`;
+      const url = `http://172.105.101.77:90/get/clients`;
 
       const response = await fetch(url, {
         mode: "cors",
@@ -159,7 +159,7 @@ const store = createStore({
     },
 
     async ClientPayments(context) {
-      const url = `http://167.235.239.71:81/get/payments`;
+      const url = `http://172.105.101.77:90/get/payments`;
 
       const response = await fetch(url, {
         mode: "cors",
@@ -186,7 +186,7 @@ const store = createStore({
       context.commit("setClientpayments", payments);
     },
     async LoadPayments(context) {
-      const url = `http://167.235.239.71:81/get/payments`;
+      const url = `http://172.105.101.77:90/get/payments`;
 
       const response = await fetch(url, {
         mode: "cors",
