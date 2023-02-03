@@ -14,11 +14,11 @@
     </div>
      <div class="form-control">
       <label for="password">Password </label>
-      <input type="text" id="password" v-model="formData.password" />
+      <input type="password" id="password" v-model="formData.password" />
     </div>
      <div class="form-control">
       <label for="cpassword">Confirm password </label>
-      <input type="text" id="cpassword" v-model="formData.cpassword" />
+      <input type="password" id="cpassword" v-model="formData.cpassword" />
     </div>
     
     <base-button>Submit</base-button>

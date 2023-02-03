@@ -7,59 +7,10 @@ const store = createStore({
 
     courts: [],
     clients: [],
-    payments:[],
-    clientpayment: [{
-        id: 1,
-        client_id: 1,
-        name: 'Ronnie',
-        payment_date: "29/6/2022",
-        amount: 5000
-
-    },
-    {
-      id: 2,
-      client_id: 3,
-      name: 'Ben',
-      payment_date: "30/6/2022",
-      amount: 5000
-
-  },
-  
-  ],
-  clientpaymentz: [{
-    id: 1,
-    client_id: 1,
-    payment_date: "29/6/2022",
-    amount: 5000
-
-},
-{
-  id: 2,
-  client_id: 3,
-  payment_date: "30/6/2022",
-  amount: 5000
-
-},
-
-],
-    clientPayments: [{
-      id: 1,
-      client_id: 1,
-      name: 'Ronnie',
-      payment_date: "29/6/2022",
-      amount: 5000
-
-  },
-],
-    vehicleTrips: [
-      {
-        id: 1,
-        vehicle: 'KDH242Z',
-        trip: 'Nyamira',
-        date: "29/6/2022",
-        amount: 80000
-      },
-    ]
+    payments: [],
+    clientpayment: [],
+    clientpaymentz: [],
+    clientPayments: [],
   },
   mutations: {
     setUser(state, user) {
@@ -86,7 +37,6 @@ const store = createStore({
     setClientpayments(state, clientPaymentz) {
       state.clientPaymentz = clientPaymentz;
     },
-
 
     setRevenues(state, revenues) {
       state.revenues = revenues;
@@ -177,7 +127,7 @@ const store = createStore({
         const payment = {
           id: key,
           client_Id: responseData[key].client_id,
-          
+
           payment_date: responseData[key].payment_date,
           amount: responseData[key].amount,
         };
@@ -186,7 +136,7 @@ const store = createStore({
       context.commit("setClientpayments", payments);
     },
     async LoadPayments(context) {
-      const url = `http://localhost:5001/get/payments`;
+      const url = `https://api.roberms.com/get/payments`;
 
       const response = await fetch(url, {
         mode: "cors",
@@ -199,7 +149,7 @@ const store = createStore({
       if (!response.ok) {
         //
       }
-      console.log(responseData)
+      console.log(responseData);
       const payments = [];
       for (const key in responseData) {
         const payment = {
@@ -226,14 +176,15 @@ const store = createStore({
     allCourts: (state) => state.courts,
     payments: (state) => state.payments,
     // ClientPayments: (state) => state.clientPayments,
-    clientPaymentGetter: (state) => (client)=>state.clientpaymentz.filter(pay=>pay.client_id==client),
-    PaymentGetter: (state) => (client)=>state.payments.filter(pay=>pay.client_id==client),
-    clientName: (state) => (client)=> state.clients.filter(pay=>pay.client_id==client),
-    
+    clientPaymentGetter: (state) => (client) =>
+      state.clientpaymentz.filter((pay) => pay.client_id == client),
+    PaymentGetter: (state) => (client) =>
+      state.payments.filter((pay) => pay.client_id == client),
+    clientName: (state) => (client) =>
+      state.clients.filter((pay) => pay.client_id == client),
+
     // clientName: (state) => (client)=> state.clients.filter(pay=pay.client_id=client)
-
   },
-
 
   //
 });
