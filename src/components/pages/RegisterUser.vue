@@ -46,7 +46,7 @@ export default {
   },
   methods: {
     async createUser(){
-      const response = await axios.post("http://localhost:5001/user/registration", this.formData)
+      const response = await axios.post("https://api.roberms.com/user/registration", this.formData)
       console.log(response)
         // axios.post("http://localhost:5000/user/registration", this.formData)
         // .then(response=>console.log(response))

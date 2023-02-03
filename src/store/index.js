@@ -104,7 +104,7 @@ const store = createStore({
     },
 
     async LoadCourts(context) {
-      const url = `http://localhost:5001/get/courts`;
+      const url = `https://api.roberms.com/get/courts`;
 
       const response = await fetch(url, {
         mode: "cors",
@@ -130,7 +130,7 @@ const store = createStore({
       context.commit("setCourts", courts);
     },
     async LoadClients(context) {
-      const url = `http://localhost:5001/get/clients`;
+      const url = `https://api.roberms.com/get/clients`;
 
       const response = await fetch(url, {
         mode: "cors",
@@ -159,7 +159,7 @@ const store = createStore({
     },
 
     async ClientPayments(context) {
-      const url = `http://localhost:5001/get/payments`;
+      const url = `https://api.roberms.com/get/payments`;
 
       const response = await fetch(url, {
         mode: "cors",
