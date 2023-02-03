@@ -7,11 +7,11 @@
   <form @submit.prevent="createClient">
     <div class="form-control">
       <label for="name"> name </label>
-      <input type="text" id="name" v-model="formData.name" />
+      <input  class="form-control" type="text" id="name" v-model="formData.name" />
     </div>
     <div class="form-control"> 
       <label for="id_number">phone </label>
-      <input type="text" id="id_number" v-model="formData.phone" />
+      <input  class="form-control" type="text" id="id_number" v-model="formData.phone" />
     </div>
     <div class="form-control">
     <div class="field">
