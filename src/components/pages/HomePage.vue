@@ -39,43 +39,32 @@
 
   <!-- header -->
   <header class="header" id="intro">
-    <nav class="navbar">
-      <div class="container">
-        <div class="brand-and-toggler">
-          <a href="/" class="navbar-brand"> Clean<span></span>Shift </a>
-          <button type="button" class="navbar-toggler" id="navbar-toggler">
-            <i class="fas fa-bars"></i>
-          </button>
-        </div>
+  
 
-        <div class="navbar-collapse">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a href="#intro" class="nav-link">intro</a>
-            </li>
-            <li class="nav-item">
-              <a href="#feature" class="nav-link">feature</a>
-            </li>
-            
-            <li class="nav-item">
-              <a href="#pricing" class="nav-link">pricing</a>
-            </li>
-            <li class="nav-item">
-              <a href="#testimonial" class="nav-link">testimonial</a>
-            </li>
-            <li class="nav-item">
-              <a href="#contact" class="nav-link">Contact Us</a>
-            </li>
-            <li v-if="isLoggedIn" class="nav-item">
-              <a href="/dashboard" class="nav-link">Dashboard</a>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <ul>
+    <a class="navbar-brand" href="#">Cleanshift</a>
+    <a class="nav-link active" href="#intro">Intro</a>
+    <a class="nav-link active" href="#feature">Features</a>
+    <a class="nav-link active" href="#pricing">Pricing</a>
+    <a class="nav-link active" href="#testimonial">Testimonial</a>
+    <a class="nav-link active" href="#contact">Contact us</a>
+    
+    </ul>
+    <li v-if="isLoggedIn">
+              <a href="/dashboard" class="nav-link active">Dashboard</a>
             </li>
             <li v-else class="nav-item">
-              <a href="/login" class="nav-link">Login</a>
+              <a href="/login" class="nav-link active">Login</a>
             </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <!-- <a class="nav-link active" href="/login">Login</a> -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+  </div>
+</nav> 
     <!-- <div class="bodies"> -->
 
     <div class="hero-div center container">

@@ -8,20 +8,20 @@
       <label for="name"> Name </label>
       <input type="text" id="name" v-model="formData.name" />
     </div>
-    <div class="form-control">
+    <div >
       <label for="email">Email </label>
-      <input type="text" id="email" v-model="formData.email" />
+      <input class="form-control" type="text" id="email" v-model="formData.email" />
     </div>
-     <div class="form-control">
+     <div>
       <label for="password">Password </label>
-      <input type="password" id="password" v-model="formData.password" />
+      <input class="form-control" type="password" id="password" v-model="formData.password" />
     </div>
-     <div class="form-control">
+     <div>
       <label for="cpassword">Confirm password </label>
-      <input type="password" id="cpassword" v-model="formData.cpassword" />
+      <input class="form-control" type="password" id="cpassword" v-model="formData.cpassword" />
     </div>
-    
-    <base-button>Submit</base-button>
+    <button class="btn btn-secondary">Submit</button>
+    <!-- <base-button class="btn btn-secondary">Submit</base-button> -->
   </form>
   </base-card>
 </div>
