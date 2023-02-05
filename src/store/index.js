@@ -136,7 +136,7 @@ const store = createStore({
       context.commit("setClientpayments", payments);
     },
     async LoadPayments(context) {
-      const url = `https://api.roberms.com/get/payments`;
+      const url = `https://api.roberms.com/all/payments`;
 
       const response = await fetch(url, {
         mode: "cors",
@@ -155,7 +155,7 @@ const store = createStore({
         const payment = {
           id: key,
           client_id: responseData[key].client_id,
-          name: responseData[key].name,
+          name: responseData[key].client_id,
           amount: responseData[key].amount,
           date: responseData[key].payment_date,
           type: responseData[key].type,
