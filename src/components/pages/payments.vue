@@ -17,7 +17,7 @@
                 <tr v-for="payment in payments" :key="payment.id">
                     
                     <!-- <td>{{ payment.client_id}}</td> -->
-                    <td>{{ payment.name.client_name}}</td>
+                    <td>{{ payment.name}}</td>
                     <td>{{ payment.amount}}</td>
                     <td>{{ new Date(payment.date).toLocaleString('nl-NL') }}</td>
                     <td>{{ payment.type}}</td>
