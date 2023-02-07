@@ -39,7 +39,7 @@ export default {
             
         },
         id_client(){
-            return this.client_id 
+            return this.client_id + 1
 
         }
 
