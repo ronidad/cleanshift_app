@@ -15,6 +15,7 @@
             </thead> 
             <tbody>
                 <tr v-for="payment in payments" :key="payment.id">
+                    
                     <!-- <td>{{ payment.client_id}}</td> -->
                     <td>{{ payment.name}}</td>
                     <td>{{ payment.amount}}</td>
