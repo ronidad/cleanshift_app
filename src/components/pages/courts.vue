@@ -14,14 +14,14 @@
         <tr>
           <th><h3>Name</h3></th>
           <th><h3>area</h3></th>
-          <th><h3>Registration Date</h3></th>
+          <!-- <th><h3>Registration Date</h3></th> -->
         </tr>
       </thead>
       <tbody>
         <tr v-for="court in courts" :key="court.id">
           <td>{{ court.name }}</td>
           <td>{{ court.area }}</td>
-          <td>{{ new Date(court.reg_date).toLocaleString("nl-NL") }}</td>
+          <!-- <td>{{ new Date(court.reg_date).toLocaleString("nl-NL") }}</td> -->
         </tr>
       </tbody>
     </table>
@@ -34,7 +34,7 @@
 export default {
   computed: {
     courts() {
-      return this.$store.getters.allCourts;
+      return this.$store.getters.courts;
     },
     isLoggedIn() {
       return this.$store.getters.isLoggedIn;

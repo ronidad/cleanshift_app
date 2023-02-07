@@ -71,7 +71,7 @@ const store = createStore({
       for (const key in responseData) {
         const court = {
           id: key,
-          name: responseData[key].courtName,
+          name: responseData[key].CourtName,
           area: responseData[key].area,
           reg_date: responseData[key].createdAt,
         };
@@ -100,7 +100,7 @@ const store = createStore({
           client_id: responseData[key].id,
           name: responseData[key].client_name,
           phone: responseData[key].phone,
-          court: responseData[key].court.courtName,
+          court: responseData[key].court.CourtName,
           reg_date: responseData[key].createdAt,
         };
         clients.push(client);
@@ -174,7 +174,7 @@ const store = createStore({
 
     clients: (state) => state.clients,
     revenues: (state) => state.revenues,
-    allCourts: (state) => state.courts,
+    courts: (state) => state.courts,
     payments: (state) => state.payments,
     // ClientPayments: (state) => state.clientPayments,
     clientPaymentGetter: (state) => (client) =>
