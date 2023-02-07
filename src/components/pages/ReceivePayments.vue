@@ -16,7 +16,7 @@
               Select client
             </option>
              <option  v-for="client in clients" :key="client.id">
-       {{ client.client_id  }}-{{client.name }}
+       {{ client.clientId  }}-{{client.name }}
     </option>
           </select>
         </div>
@@ -66,7 +66,7 @@ export default {
         user: '',
         
         formData: {
-            name: '',
+            clientId: '',
             amount: '',
             type: '',
             ref: ''

@@ -98,10 +98,10 @@ const store = createStore({
         const client = {
           id: key,
           client_id: responseData[key].id,
-          name: responseData[key].name,
+          name: responseData[key].client_name,
           phone: responseData[key].phone,
-          court: responseData[key].court,
-          reg_date: responseData[key].reg_date,
+          court: responseData[key].court.courtName,
+          reg_date: responseData[key].createdAt,
         };
         clients.push(client);
       }
