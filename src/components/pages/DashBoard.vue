@@ -7,7 +7,7 @@
 
    <table>
     <tr>
-    <td><base-card>55 clients registered</base-card></td>
+    <td><base-card>{{ clients.length }} clients registered</base-card></td>
     <td><base-card>10 courts served</base-card></td>
     <td><base-card>10,000 Collected</base-card></td>
     <td><base-card>7 months in operation</base-card></td>
@@ -18,7 +18,26 @@
    </div>
 </template>
 <script>
+export default {
+    computed: {
+        clients() {
+            return  this.$store.getters.clients
 
+            
+        },
+        id_client(){
+            return this.client_id + 1
+
+        }
+
+    },
+     created() {
+    this.$store.dispatch('LoadClients');  
+    
+    
+  },
+
+}
 </script>
 
 <style scoped>
