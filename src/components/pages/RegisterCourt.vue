@@ -4,10 +4,10 @@
 <base-card>
 
   <h2>Register court</h2>
-  <form @submit.prevent="createDriver">
+  <form @submit.prevent="createCourt">
     <div class="form-control">
-      <label for="name"> name </label>
-      <input type="text" id="name" v-model="formData.name" />
+      <label for="CourtName"> name </label>
+      <input type="text" id="name" v-model="formData.CourtName" />
     </div>
     <div class="form-control">
       <label for="area">Area </label>
@@ -39,7 +39,7 @@ export default {
         user: '',
         
         formData: {
-            name: '',
+          CourtName: '',
             area: '',
             
             
@@ -57,7 +57,7 @@ export default {
 
     // },
   methods: {
-    async createDriver(){
+    async createCourt(){
       const response = await axios.post("https://api.roberms.com/court/registration/", this.formData)
       console.log(response)
    
