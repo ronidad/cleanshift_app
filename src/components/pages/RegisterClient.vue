@@ -69,7 +69,7 @@ export default {
   },
   computed: {
         courts() {
-            return  this.$store.getters.allCourts
+            return  this.$store.getters.courts
 
             
         }
