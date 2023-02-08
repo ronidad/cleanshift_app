@@ -109,33 +109,33 @@ const store = createStore({
       context.commit("setClients", clients);
     },
 
-    async ClientPayments(context) {
-      const url = `https://api.roberms.com/get/payments`;
+    // async ClientPayments(context) {
+    //   const url = `https://api.roberms.com/get/payments`;
 
-      const response = await fetch(url, {
-        mode: "cors",
-        // credentials: "include",
-        headers: {
-          "Access-Control-Allow-Origin": true,
-        },
-      });
-      const responseData = await response.json();
-      if (!response.ok) {
-        //
-      }
-      const payments = [];
-      for (const key in responseData) {
-        const payment = {
-          id: key,
-          client_Id: responseData[key].client_id,
-
-          payment_date: responseData[key].payment_date,
-          amount: responseData[key].amount,
-        };
-        payments.push(payment);
-      }
-      context.commit("setClientpayments", payments);
-    },
+    //   const response = await fetch(url, {
+    //     mode: "cors",
+    //     // credentials: "include",
+    //     headers: {
+    //       "Access-Control-Allow-Origin": true,
+    //     },
+    //   });
+    //   const responseData = await response.json();
+    //   if (!response.ok) {
+    //     //
+    //   }
+    //   const payments = [];
+    //   for (const key in responseData) {
+    //     const payment = {
+    //       id: key,
+    //       client_id: responseData[key].client_id,
+    //       name: responseData[key].client.client_name,
+    //       payment_date: responseData[key].payment_date,
+    //       amount: responseData[key].amount,
+    //     };
+    //     payments.push(payment);
+    //   }
+    //   context.commit("setClientpayments", payments);
+    // },
     async LoadPayments(context) {
       const url = `https://api.roberms.com/get/payments`;
 
@@ -156,8 +156,8 @@ const store = createStore({
       for (const key in responseData) {
          const payment = {
           id: key,
-          client_id: responseData[key].client_id,
-          name: responseData[key].client.client_name,
+          client_id: responseData[key].client.id,
+          name: responseData[key].client.name,
           amount: responseData[key].amount,
           date: responseData[key].payment_date,
           type: responseData[key].type,
@@ -178,8 +178,7 @@ const store = createStore({
     courts: (state) => state.courts,
     payments: (state) => state.payments,
     // ClientPayments: (state) => state.clientPayments,
-    clientPaymentGetter: (state) => (client) =>
-      state.clientpaymentz.filter((pay) => pay.client_id == client),
+    
     PaymentGetter: (state) => (client) =>
       state.payments.filter((pay) => pay.client_id == client),
     clientName: (state) => (client) =>

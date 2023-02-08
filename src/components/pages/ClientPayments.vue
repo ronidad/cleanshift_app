@@ -8,7 +8,7 @@
     
     
     <base-card>
-    <!-- {{clientName[0]}} -->
+    <!-- {{clientName[0].name}} -->
     <h4>Payments for: 
       
       <i v-for="name in clientName" :key="name.id">
@@ -91,7 +91,7 @@ export default {
       this.$store.dispatch('LoadClients'); 
       let currentClient = localStorage.getItem('user')
       this.currentClient = JSON.parse(currentClient)
-      console.log(currentClient)
+      console.log(this.clientpayments)
       
   
   //   const url = `http://localhost:5000/get/payments/` + this.client_id;
