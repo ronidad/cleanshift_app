@@ -16,7 +16,7 @@
               Select client
             </option>
              <option  v-for="client in clients" :key="client.id">
-       {{ client.client_id  }}-{{client.name }}
+       {{ client.client_id  }} {{client.name }}
     </option>
           </select>
         </div>
@@ -31,7 +31,7 @@
         <label class="label">payment type</label>
         <div class="select">
           
-          <select v-model="formData.type">
+          <select v-model="formData.payment_type">
             
   <option>MPESA</option>
   <option>CASH</option>
@@ -43,7 +43,7 @@
 
       <div class="form-control">
       <label for="amount"> Reference </label>
-      <input type="text" id="ref" v-model="formData.reference" />
+      <input type="text" id="payment_reference" v-model="formData.payment_reference" />
     </div>
      
      
@@ -66,10 +66,10 @@ export default {
         user: '',
         
         formData: {
-            clientId: '',
+            name: '',
             amount: '',
-            type: '',
-            ref: ''
+            payment_type: '',
+            payment_reference: ''
 
             
             
