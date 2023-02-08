@@ -7,11 +7,11 @@
   <form @submit.prevent="createClient">
     <div class="form-control">
       <label for="name"> name </label>
-      <input  class="form-control" type="text" id="name" v-model="formData.name" />
+      <input  class="form-control" type="text" id="client_name" v-model="formData.client_name" />
     </div>
     <div class="form-control"> 
-      <label for="id_number">phone </label>
-      <input  class="form-control" type="text" id="id_number" v-model="formData.phone" />
+      <label for="phone">phone </label>
+      <input  class="form-control" type="text" id="phone" v-model="formData.phone" />
     </div>
     <div class="form-control">
     <div class="field">
@@ -21,8 +21,9 @@
             <option disabled value="">
               Select a court
             </option>
+          
              <option  v-for="court in courts" :key="court.id">
-       {{ court.name }}
+       {{ court.courtId }} {{ court.name }}
     </option>
           </select>
         </div>
@@ -54,9 +55,9 @@ export default {
         user: '',
         
         formData: {
-            name: '',
-            phone: '',
-            court:'',
+          client_name: '',
+          phone: '',
+          court:'',
             
             
             

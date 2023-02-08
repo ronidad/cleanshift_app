@@ -71,6 +71,7 @@ const store = createStore({
       for (const key in responseData) {
         const court = {
           id: key,
+          courtId: responseData[key].id,
           name: responseData[key].CourtName,
           area: responseData[key].area,
           reg_date: responseData[key].createdAt,
