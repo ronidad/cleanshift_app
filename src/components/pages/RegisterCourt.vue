@@ -10,7 +10,7 @@
       <input type="text" id="CourtName" v-model="formData.CourtName" />
     </div>
     <div class="form-control">
-      <label for="area">Area </label>
+      <label for="area">court area </label>
       <input type="text" id="area" v-model="formData.area" />
     </div>
      
