@@ -7,7 +7,7 @@
   <form @submit.prevent="createCourt">
     <div class="form-control">
       <label for="CourtName"> name </label>
-      <input type="text" id="name" v-model="formData.CourtName" />
+      <input type="text" id="CourtName" v-model="formData.CourtName" />
     </div>
     <div class="form-control">
       <label for="area">Area </label>
