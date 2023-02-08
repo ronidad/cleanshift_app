@@ -143,7 +143,7 @@
           <div class = "pricing-item">
             <h2>Weekely collections</h2>
             <div class = "price">
-              <span>Kshs 400 </span>
+              <span>Kshs 500 </span>
               <span class = "text">Monthly</span>
             </div>
             <ul>
@@ -151,7 +151,7 @@
               <li>We pick the garbage from your gate</li>
               <li>Pay after services have been offered</li>
               <li>Pay using mpesa and get alerts</li>
-              <li>Payments updated automaticallya nd statement sent as text message</li>
+              <li>Payments updated automaticallya and statement sent as text message</li>
               <li>Reliable and efficient Service</li>
             </ul>
           </div>
