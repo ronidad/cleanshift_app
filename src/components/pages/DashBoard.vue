@@ -8,9 +8,9 @@
    <table>
     <tr>
     <td><base-card>{{ clients.length }} clients registered</base-card></td>
-    <td><base-card>10 courts served</base-card></td>
+    <td><base-card>{{ courts.length }} courts served</base-card></td>
     <td><base-card>10,000 Collected</base-card></td>
-    <td><base-card>7 months in operation</base-card></td>
+    <td><base-card> {{ clients.length }} arrears to be collected </base-card></td>
     </tr>
   
 
@@ -25,6 +25,11 @@ export default {
 
             
         },
+        courts() {
+            return  this.$store.getters.courts
+
+            
+        },
         id_client(){
             return this.client_id + 1
 
@@ -33,6 +38,7 @@ export default {
     },
      created() {
     this.$store.dispatch('LoadClients');  
+    this.$store.dispatch('LoadCourts');  
     
     
   },

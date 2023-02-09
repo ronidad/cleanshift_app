@@ -2,6 +2,8 @@
     <div>
     <the-headersider></the-headersider>
     <base-card>
+    <h3>Enter Name or phone number to search </h3>  
+  <input type="text" v-model="search" placeholder="Search client" />
 <table class="table table-striped table-bordered">
         <thead>
             <tr >
@@ -13,7 +15,7 @@
             </thead> 
             <tbody>
                 
-                <tr v-for="client in clients" :key="client.id">
+                <tr v-for="client in filteredClients" :key="client.id">
                     <td><a :href="'/client/payments/' + client.client_id">{{client.name}}</a></td>
                     
                     <!-- <td>{{ client.name}}</td>  -->
@@ -34,6 +36,11 @@
 
 
 export default {
+    data() {
+    return {
+      search: "",
+    };
+  },
     computed: {
         clients() {
             return  this.$store.getters.clients
@@ -43,7 +50,12 @@ export default {
         id_client(){
             return this.client_id + 1
 
-        }
+        },
+        filteredClients() {
+      return this.clients.filter((client)=>client.name.toLowerCase().includes(this.search.toLowerCase())|client.phone.toString().includes(this.search.toLowerCase())).slice(0,10)
+        
+       
+    },
 
     },
      created() {
