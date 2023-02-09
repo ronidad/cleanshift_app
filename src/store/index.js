@@ -157,7 +157,7 @@ const store = createStore({
       for (const key in responseData) {
          const payment = {
           id: key,
-          client_id: responseData[key].id,
+          client_id: responseData[key].client.id,
           name: responseData[key].client.client_name,
           amount: responseData[key].amount,
           date: responseData[key].payment_date,
