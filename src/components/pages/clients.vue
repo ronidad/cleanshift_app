@@ -2,8 +2,13 @@
     <div>
     <the-headersider></the-headersider>
     <base-card>
-    <h3>Enter Name or phone number to search </h3>  
-  <input type="text" v-model="search" placeholder="Search client" />
+    <div class="form-outline">
+  <input type="search" id="form1" class="form-control" v-model="search" placeholder="Search client"  aria-label="Search" />
+</div>
+</base-card>
+    <base-card>
+   
+  
 <table class="table table-striped table-bordered">
         <thead>
             <tr >

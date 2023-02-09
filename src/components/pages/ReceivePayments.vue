@@ -11,12 +11,13 @@
     <div class="field">
         <label class="label">Client</label>
         <div class="select">
-          <select v-model="formData.name">
+          
+          <select  v-model="formData.name">
             <option disabled value="">
               Select client
             </option>
-             <option  v-for="client in clients" :key="client.id">
-       {{ client.client_id  }} {{client.name }}
+             <option   v-for="client in clients" :key="client.id">
+       {{ client.client_id  }} {{client.name }}: {{client.phone }}
     </option>
           </select>
         </div>
