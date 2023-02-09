@@ -102,6 +102,7 @@ const store = createStore({
           name: responseData[key].client_name,
           phone: responseData[key].phone,
           court: responseData[key].court.CourtName,
+          arrears: responseData[key].arrears,
           reg_date: responseData[key].createdAt,
         };
         clients.push(client);
@@ -160,8 +161,8 @@ const store = createStore({
           name: responseData[key].client.client_name,
           amount: responseData[key].amount,
           date: responseData[key].payment_date,
-          type: responseData[key].type,
-          reference: responseData[key].reference,
+          type: responseData[key].payment_type,
+          reference: responseData[key].payment_reference,
         };
         payments.push(payment);
       }

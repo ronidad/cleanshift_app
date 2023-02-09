@@ -8,6 +8,7 @@
                 <th><h3>Name</h3></th>
                 <th><h3>phone</h3></th>
                 <th><h3>court</h3></th>
+                <th><h3>Arrears</h3></th>
             </tr>
             </thead> 
             <tbody>
@@ -18,6 +19,7 @@
                     <!-- <td>{{ client.name}}</td>  -->
                     <td>{{ client.phone}}</td>
                     <td>{{ client.court}}</td>
+                    <td>{{ client.arrears}}</td>
                     
                 </tr>
             </tbody>
