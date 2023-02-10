@@ -50,13 +50,14 @@
     <a class="nav-link active" href="#pricing">Pricing</a>
     <a class="nav-link active" href="#testimonial">Testimonial</a>
     <a class="nav-link active" href="#contact">Contact us</a>
-    <a class="nav-link active" href="/new/client/registration">Become a client</a>
+    <!-- <a class="nav-link active" href="/new/client/registration">Become a client</a> -->
     
     </ul>
     <li v-if="isLoggedIn">
               <a href="/dashboard" class="nav-link active">Dashboard</a>
             </li>
             <li v-else class="nav-item">
+              <a class="nav-link active" href="/new/client/registration">Become a client</a>
               <a href="/login" class="nav-link active">Login</a>
             </li>
     <!-- <a class="nav-link active" href="/login">Login</a> -->
@@ -225,8 +226,13 @@
             <div>
               <h2>Send Email</h2>
               <p class = "text">cleanshift@gmail.com</p>
+             <h3> <router-link to="/new/client/registration">click here and register to become our client</router-link> </h3>
+
             </div>
+            
           </div>
+          
+
         </div>
       </div>
     </section>
