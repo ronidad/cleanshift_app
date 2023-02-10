@@ -82,6 +82,11 @@ export default {
         
 
     },
+    filteredClients() {
+      return this.clients.filter((client)=>client.name.toLowerCase().includes(this.search.toLowerCase())|client.phone.toString().includes(this.search.toLowerCase())).slice(0,10)
+        
+       
+    },
 
    
 

@@ -103,6 +103,8 @@ const store = createStore({
           phone: responseData[key].phone,
           court: responseData[key].court.CourtName,
           arrears: responseData[key].arrears,
+          isActive: responseData[key].isActive,
+          montlyPayment: responseData[key].monthly_payment,
           reg_date: responseData[key].createdAt,
         };
         clients.push(client);
@@ -159,10 +161,12 @@ const store = createStore({
           id: key,
           client_id: responseData[key].client.id,
           name: responseData[key].client.client_name,
+          court_id: responseData[key].client.courtId,
           amount: responseData[key].amount,
           date: responseData[key].payment_date,
           type: responseData[key].payment_type,
           reference: responseData[key].payment_reference,
+          
         };
         payments.push(payment);
       }
@@ -184,6 +188,12 @@ const store = createStore({
       state.payments.filter((pay) => pay.client_id == client),
     clientName: (state) => (client) =>
       state.clients.filter((pay) => pay.client_id == client),
+      courtName: (state) => (court) =>
+      state.courts.filter((pay) => pay.id == court),
+      courtPaymentGetter: (state) => (court) =>
+      state.payments.filter((pay) => pay.court_id == court),
+      courtClientsGetter: (state) => (court) =>
+      state.clients.filter((pay) => pay.court.id == court),
 
     // clientName: (state) => (client)=> state.clients.filter(pay=pay.client_id=client)
   },

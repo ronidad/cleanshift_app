@@ -15,22 +15,18 @@
                 <th><h3>Name</h3></th>
                 <th><h3>phone</h3></th>
                 <th><h3>court</h3></th>
-                <th><h3>Monthly</h3></th>
                 <th><h3>Arrears</h3></th>
-                <th><h3>Is Active</h3></th>
             </tr>
             </thead> 
             <tbody>
                 
-                <tr v-for="client in filteredClients" :key="client.id">
+                <tr v-for="client in courtclients" :key="client.id">
                     <td><a :href="'/client/payments/' + client.client_id">{{client.name}}</a></td>
                     
                     <!-- <td>{{ client.name}}</td>  -->
                     <td>{{ client.phone}}</td>
                     <td>{{ client.court}}</td>
-                    <td>{{ client.montlyPayment}}</td>
                     <td>{{ client.arrears}}</td>
-                    <td>{{ client.isActive}}</td>
                     
                 </tr>
             </tbody>
@@ -61,10 +57,16 @@ export default {
 
         },
         filteredClients() {
-      return this.clients.filter((client)=>client.name.toLowerCase().includes(this.search.toLowerCase())|client.phone.toString().includes(this.search.toLowerCase())).slice(0,6)
+      return this.clients.filter((client)=>client.name.toLowerCase().includes(this.search.toLowerCase())|client.phone.toString().includes(this.search.toLowerCase())).slice(0,7)
         
        
     },
+    courtclients (){
+        return this.$store.getters.courtClientsGetter(this.$route.params.court)
+        
+
+    },
+
 
     },
      created() {

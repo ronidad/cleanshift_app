@@ -16,7 +16,8 @@ import Payments from "./components/pages/payments";
 import Reports from "./components/pages/reports";
 import Courts from "./components/pages/courts";
 import ClientPayments from "./components/pages/ClientPayments";
-
+import courtPayments from "./components/pages/courtPayments";
+import courtClients from "./components/pages/courtClients";
 // import store from './store'
 
 const router = createRouter({
@@ -45,6 +46,9 @@ const router = createRouter({
     },
     { path: "/payments", component: Payments, meta: { auth: true } },
     { path: "/client/payments/:client", component: ClientPayments, meta: { auth: true }  },
+    { path: "/court/payments/:court", component: courtPayments, meta: { auth: true }  },
+    { path: "/court/clients/:court", component: courtClients, meta: { auth: true }  },
+
   ],
 });
 // router.beforeEach((to, from, next) => {
