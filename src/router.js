@@ -13,6 +13,7 @@ import RegisterClient from "./components/pages/RegisterClient";
 import OutsideClient from "./components/pages/newClients";
 import ReceivePayment from "./components/pages/ReceivePayments";
 import Payments from "./components/pages/payments";
+import MpesaPayments from "./components/pages/mpesaPayments";
 
 import Reports from "./components/pages/reports";
 import Courts from "./components/pages/courts";
@@ -47,6 +48,7 @@ const router = createRouter({
       meta: { auth: true }
     },
     { path: "/payments", component: Payments, meta: { auth: true } },
+    { path: "/mpesa/payments", component: MpesaPayments, meta: { auth: true } },
     { path: "/client/payments/:client", component: ClientPayments, meta: { auth: true }  },
     { path: "/court/payments/:court", component: courtPayments, meta: { auth: true }  },
     { path: "/court/clients/:court", component: courtClients, meta: { auth: true }  },

@@ -20,6 +20,9 @@
         <li>
           <a href="/payments"><i class="fas fa-map-pin"></i>Payments</a>
         </li>
+        <li>
+          <a href="/mpesa/payments"><i class="fas fa-map-pin"></i>Mpesa </a>
+        </li>
         <!-- <li> <a href="/dashboard"><i class="fas fa-map-pin"></i>Expenses</a></li> -->
       </ul>
       <ul v-else></ul>
