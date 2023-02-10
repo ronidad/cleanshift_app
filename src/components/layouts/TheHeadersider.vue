@@ -1,90 +1,97 @@
 <template>
   <!-- <side-bar></side-bar>   -->
-  
+
   <div class="wrapper">
     <div class="sidebar">
-      <h2 >sidebar</h2>
+      <h2>sidebar</h2>
       <ul v-if="isLoggedIn">
-        
-        <li> <a href="/dashboard"><i class="fas fa-home"></i>Dashboard</a></li>
+        <li>
+          <a href="/dashboard"><i class="fas fa-home"></i>Dashboard</a>
+        </li>
         <!-- <li> <a href="#"><i class="fas fa-user"></i>Vehicles</a></li> -->
-        <li> <a href="/courts"><i class="fas fa-address-card"></i>Courts</a></li>
-        <li> <a href="/clients"><i class="fas fa-project-diagram"></i>clients</a></li>
+        <li>
+          <a href="/courts"><i class="fas fa-address-card"></i>Courts</a>
+        </li>
+        <li>
+          <a href="/clients"><i class="fas fa-project-diagram"></i>clients</a>
+        </li>
         <!-- <li> <a href="/dashboard"><i class="fas fa-blog"></i>Invoices</a></li> -->
         <!-- <li> <a href="#"><i class="fas fa-address-book"></i>Admins</a></li> -->
-        <li> <a href="/payments"><i class="fas fa-map-pin"></i>Payments</a></li>
+        <li>
+          <a href="/payments"><i class="fas fa-map-pin"></i>Payments</a>
+        </li>
         <!-- <li> <a href="/dashboard"><i class="fas fa-map-pin"></i>Expenses</a></li> -->
       </ul>
-      <ul v-else>
-
-      </ul>
+      <ul v-else></ul>
     </div>
     <div class="main_content">
       <div class="header">
         <nav>
-      <h3> <router-link to="#">welcome {{user.name}}</router-link></h3>
-      <ul> 
-        <li v-if="isLoggedIn">
-          <router-link to="/profile">profile</router-link>
-        </li>
-        <li v-else>
-          <router-link to="/register">signup</router-link>
-          <router-link to="/login">login</router-link>
-        </li>
-        <li v-if="isLoggedIn">
-          <button @click="handleLogout">logout</button>
-       </li>
-        <!-- <li v-if="isLoggedIn">
+          <h3>
+            <router-link to="#">welcome {{ user.name }}</router-link>
+          </h3>
+          <ul>
+            <li v-if="isLoggedIn">
+              <router-link to="/profile">profile</router-link>
+            </li>
+            <li v-else>
+              <router-link to="/register">signup</router-link>
+              <router-link to="/login">login</router-link>
+            </li>
+            <li v-if="isLoggedIn">
+              <button @click="handleLogout">logout</button>
+            </li>
+            <!-- <li v-if="isLoggedIn">
           <router-link to="/register">sign Uo</router-link>
         </li> -->
-       
 
-        <!-- <li v-if="isLoggedIn">
+            <!-- <li v-if="isLoggedIn">
           <base-button @click="logout">logout</base-button>
         </li> -->
-      </ul>
-    </nav>
+          </ul>
+        </nav>
         <!-- <router-link>logout</router-link> -->
       </div>
       <div class="main_content">
-        <div>
-        </div>
+        <div></div>
       </div>
     </div>
-
   </div>
 </template>
 <script>
 export default {
- computed: {
+  computed: {
     isLoggedIn() {
       return this.$store.getters.isLoggedIn;
     },
   },
 
-  methods:{
+  methods: {
     handleLogout() {
-      this.$store.dispatch('clearToken')
-      localStorage.removeItem('token') // clear your user's token from localstorage
-      localStorage.removeItem('user') // clear your user from localstorage
+      this.$store.dispatch("clearToken");
+      localStorage.removeItem("token"); // clear your user's token from localstorage
+      localStorage.removeItem("user"); // clear your user from localstorage
 
-      this.$router.push('/')
-
-    }
+      this.$router.push("/");
+    },
   },
-  data(){
-          return {
-               user: ""
-          }
-     },
-     mounted(){
-          let user = localStorage.getItem('user')
-          this.user = JSON.parse(user)
-     },
-}
+  data() {
+    return {
+      user: "",
+    };
+  },
+  mounted() {
+    let user = localStorage.getItem("user");
+    this.user = JSON.parse(user);
+
+    setInterval(() => {
+      this.handleLogout();
+    }, 3600000);
+  },
+};
 </script>
-<style >
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+<style>
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap");
 
 * {
   margin: 0;
@@ -92,7 +99,7 @@ export default {
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
-  font-family: 'Josefin Sans', sans-serif;;
+  font-family: "Josefin Sans", sans-serif;
 }
 body {
   background: #fdfbfb;
@@ -109,7 +116,6 @@ body {
   height: 100%;
   background: rgb(35, 48, 66);
   padding: 30px 0;
-
 }
 .wrapper .sidebar h2 {
   color: #ffff;
@@ -120,7 +126,7 @@ body {
 .wrapper .sidebar ul li {
   padding: 2px;
   border-bottom: 1px solid rgb(0, 0, 0, 0.05);
-   border-top: 1px solid rgb(225, 225, 225, 0.05);
+  border-top: 1px solid rgb(225, 225, 225, 0.05);
 }
 .wrapper .sidebar ul li a {
   color: #bdb8d7;
@@ -139,8 +145,6 @@ body {
   width: 100%;
   margin-left: -20px;
   margin-top: 20px;
-  
-   
 }
 .wrapper .main_content .header {
   /* padding: 20px; */
@@ -150,8 +154,6 @@ body {
   height: 3rem;
   width: 101%;
   margin-top: -15px;
-  
- 
 }
 .header nav {
   width: 90%;
@@ -170,27 +172,26 @@ body {
 }
 .header a {
   text-decoration: none;
-  
+
   display: inline-block;
   padding: 0.75rem 1.5rem;
   border: 1px solid transparent;
 }
 
-
-table, th, td {
+table,
+th,
+td {
   border: 1px solid;
   padding: 7px;
 }
 table {
   width: 90%;
-   border: 1px solid;
-   border-collapse: collapse;
-   
-  
+  border: 1px solid;
+  border-collapse: collapse;
 }
-table, tr {
-    color: #717171;
+table,
+tr {
+  color: #717171;
 }
 /* tr:hover {background-color: #717070;} */
-
 </style>
