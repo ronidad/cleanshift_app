@@ -6,7 +6,12 @@
    
 </section>
     <section v-else>
-        <p>Details</p>
+      <!-- <base-card>
+    <div class="form-outline">
+  <input type="search" id="form1" class="form-control" v-model="search" placeholder="Search court"  aria-label="Search" />
+</div>
+</base-card> -->
+        <base-card>
 
 
     <table class="table table-striped table-bordered">
@@ -19,13 +24,15 @@
       </thead>
       <tbody>
         <tr v-for="court in courts" :key="court.id">
-          <td>{{ court.name }}</td>
+          <!-- <td>{{ court.name }}</td> -->
+          <td><a :href="'/court/clients/' + court.courtId">{{court.name}}</a></td>
           <td>{{ court.area }}</td>
           <!-- <td>{{ new Date(court.reg_date).toLocaleString("nl-NL") }}</td> -->
         </tr>
       </tbody>
     </table>
-    <router-link to="/register/court">register new Court</router-link>
+  </base-card>
+    <!-- <router-link to="/register/court">register new Court</router-link> -->
 </section>
 
   </div>
@@ -36,6 +43,12 @@ export default {
     courts() {
       return this.$store.getters.courts;
     },
+    filteredCourts() {
+      return this.courts.filter((court)=>court.name.toLowerCase().includes(this.search.toLowerCase())).slice(0,6)
+        
+       
+    },
+
     isLoggedIn() {
       return this.$store.getters.isLoggedIn;
     },

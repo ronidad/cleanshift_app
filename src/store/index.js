@@ -102,6 +102,7 @@ const store = createStore({
           name: responseData[key].client_name,
           phone: responseData[key].phone,
           court: responseData[key].court.CourtName,
+          courtId: responseData[key].courtId,
           arrears: responseData[key].arrears,
           isActive: responseData[key].isActive,
           montlyPayment: responseData[key].monthly_payment,
@@ -155,18 +156,18 @@ const store = createStore({
       }
       console.log(responseData);
       const payments = [];
-      
+
       for (const key in responseData) {
-         const payment = {
+        const payment = {
           id: key,
           client_id: responseData[key].client.id,
           name: responseData[key].client.client_name,
           court_id: responseData[key].client.courtId,
+          court_name: responseData[key].client.CourtName,
           amount: responseData[key].amount,
           date: responseData[key].payment_date,
           type: responseData[key].payment_type,
           reference: responseData[key].payment_reference,
-          
         };
         payments.push(payment);
       }
@@ -183,17 +184,17 @@ const store = createStore({
     courts: (state) => state.courts,
     payments: (state) => state.payments,
     // ClientPayments: (state) => state.clientPayments,
-    
+
     PaymentGetter: (state) => (client) =>
       state.payments.filter((pay) => pay.client_id == client),
     clientName: (state) => (client) =>
       state.clients.filter((pay) => pay.client_id == client),
-      courtName: (state) => (court) =>
-      state.courts.filter((pay) => pay.id == court),
-      courtPaymentGetter: (state) => (court) =>
+    courtName: (state) => (court) =>
+      state.courts.filter((name) => name.courtId == court),
+    courtPaymentGetter: (state) => (court) =>
       state.payments.filter((pay) => pay.court_id == court),
-      courtClientsGetter: (state) => (court) =>
-      state.clients.filter((pay) => pay.court.id == court),
+    courtClientsGetter: (state) => (court) =>
+      state.clients.filter((pay) => pay.courtId == court),
 
     // clientName: (state) => (client)=> state.clients.filter(pay=pay.client_id=client)
   },
