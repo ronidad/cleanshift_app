@@ -50,6 +50,7 @@
     <a class="nav-link active" href="#pricing">Pricing</a>
     <a class="nav-link active" href="#testimonial">Testimonial</a>
     <a class="nav-link active" href="#contact">Contact us</a>
+    <a class="nav-link active" href="/new/client/registration">Become a client</a>
     
     </ul>
     <li v-if="isLoggedIn">

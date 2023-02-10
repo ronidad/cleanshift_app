@@ -10,6 +10,7 @@ import DashBoard from "./components/pages/DashBoard";
 import Clients from "./components/pages/clients";
 import RegisterCourt from "./components/pages/RegisterCourt";
 import RegisterClient from "./components/pages/RegisterClient";
+import OutsideClient from "./components/pages/newClients";
 import ReceivePayment from "./components/pages/ReceivePayments";
 import Payments from "./components/pages/payments";
 
@@ -38,6 +39,7 @@ const router = createRouter({
     },
     { path: "/clients", component: Clients, meta: { auth: true } },
     { path: "/register/court", component: RegisterCourt, meta: { auth: true } },
+    {path: "/new/client/registration", component: OutsideClient},
     { path: "/courts", component: Courts, meta: { auth: true }  },
     {
       path: "/receive/payment",
