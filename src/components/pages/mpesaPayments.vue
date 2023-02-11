@@ -21,7 +21,8 @@
                     <td>{{ payment.name }}</td>
                     <td>{{ payment.phone}}</td>
                     <td>{{ payment.amount}}</td>
-                    <td>{{ new Date(payment.date).toLocaleString('nl-NL') }}</td>
+                    <td>{{ new Date(payment.payment_date).toLocaleString('nl-NL') }}</td>
+                    <!-- <td>{{ new Date(payment.date).toLocaleString('nl-NL') }}</td> -->
                     
                     <td>{{ payment.reference}}</td>
                     
