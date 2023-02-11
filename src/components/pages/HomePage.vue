@@ -151,7 +151,7 @@
             <ul>
               <li>We provide paper bags for you to store your garbage</li>
               <li>We pick the garbage from your gate</li>
-              <li>Pay after services have been offered</li>
+              <li>Register, pay one month depost and have cleanshift collect your your garbage</li>
               <li>Pay using mpesa and get alerts</li>
               <li>Payments updated automaticallya and statement sent as text message</li>
               <li>Reliable and efficient Service</li>

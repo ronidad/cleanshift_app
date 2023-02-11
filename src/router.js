@@ -20,6 +20,7 @@ import Courts from "./components/pages/courts";
 import ClientPayments from "./components/pages/ClientPayments";
 import courtPayments from "./components/pages/courtPayments";
 import courtClients from "./components/pages/courtClients";
+import RequestingClients from "./components/pages/requestingClients";
 // import store from './store'
 
 const router = createRouter({
@@ -42,6 +43,7 @@ const router = createRouter({
     { path: "/register/court", component: RegisterCourt, meta: { auth: true } },
     {path: "/new/client/registration", component: OutsideClient},
     { path: "/courts", component: Courts, meta: { auth: true }  },
+    { path: "/requesting/clients", component: RequestingClients, meta: { auth: true }  },
     {
       path: "/receive/payment",
       component: ReceivePayment,
