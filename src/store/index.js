@@ -268,6 +268,7 @@ const store = createStore({
       state.clients.filter((pay) => pay.courtId == court),
       MpesaPayments: (state)=> state.MpesaPayments,
       RequestingClients: (state)=>state.requesting_clients,
+      
 
     // clientName: (state) => (client)=> state.clients.filter(pay=pay.client_id=client)
   },
