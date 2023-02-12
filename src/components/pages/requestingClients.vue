@@ -22,15 +22,14 @@
             </thead> 
             <tbody>
                 
-                <tr v-for="client in filteredClients" :key="client.id">
+                <tr v-for="client in Requestingclients" :key="client.id">
                     <td><a :href="'/client/payments/' + client.client_id">{{client.name}}</a></td>
                     
                     <!-- <td>{{ client.name}}</td>  -->
                     <td>{{ client.phone}}</td>
                     <td>{{ client.court}}</td>
-                    
-                    <td>{{ client.arrears}}</td>
-                    <td>{{ client.reg_date}}</td>
+                    <td>{{ new Date(client.reg_date).toLocaleString('nl-NL') }}</td>
+                    <!-- <td>{{ client.reg_date}}</td> -->
                     <td>{{ client.approved}}</td>
                     
                 </tr>

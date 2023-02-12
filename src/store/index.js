@@ -143,7 +143,7 @@ const store = createStore({
           phone: responseData[key].phone,
           court: responseData[key].court.CourtName,
           
-          approved: responseData[key].approved,
+          approved: responseData[key].Approved,
           reg_date: responseData[key].reg_date,
         };
         requesting_clients.push(client);
