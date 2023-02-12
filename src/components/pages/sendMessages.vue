@@ -4,6 +4,8 @@
   <base-card>
   
     <h2>Send message</h2>
+
+    {{ messages }}
     <form @submit.prevent="sendSms">
      
       
@@ -77,7 +79,11 @@
               return  this.$store.getters.courts
   
               
-          }
+          },
+          messages () {
+            return this.$store.getters.messagesGetter
+          },
+
   
       },
        created() {

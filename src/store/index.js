@@ -13,6 +13,19 @@ const store = createStore({
     clientPayments: [],
     MpesaPayments:[],
     requesting_clients: [],
+    messages:[{
+      "phone":"0725029795"
+    },
+    {
+      "message":"testing message"
+    },
+    {
+      "phone":"0724648426"
+    },
+    {
+      "message":"testing message to ben"
+    }],
+
   },
   mutations: {
     setUser(state, user) {
@@ -268,6 +281,7 @@ const store = createStore({
       state.clients.filter((pay) => pay.courtId == court),
       MpesaPayments: (state)=> state.MpesaPayments,
       RequestingClients: (state)=>state.requesting_clients,
+      messagesGetter: (state)=>state.messages
       
 
     // clientName: (state) => (client)=> state.clients.filter(pay=pay.client_id=client)
