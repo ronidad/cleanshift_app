@@ -12,7 +12,7 @@
       </div>
       <div class="form-control"> 
         <label for="phone">phone </label>
-        <input  class="form-control" type="text" id="phone" v-model="formData.phone" />
+        <input  class="form-control" type="text" id="phone" v-model="formData.phone" v-model.trim="phone" />
       </div>
       <div class="form-control">
       <div class="field">
