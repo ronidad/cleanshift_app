@@ -32,7 +32,7 @@
       </tbody>
     </table>
   </base-card>
-    <!-- <router-link to="/register/court">register new Court</router-link> -->
+    <router-link to="/register/court">register new Court</router-link>
 </section>
 
   </div>
