@@ -1,34 +1,24 @@
 <template>
     <div>
+        
 <the-headersider></the-headersider>
 
+<div class="row mx-md-n5">
+    
+  <div class="col px-md-2"><div class="p-3 border bg-light"><strong>{{ clients.length }} </strong>  Clients registsred</div></div>
+  <div class="col px-md-2"><div class="p-3 border bg-light"> <strong>{{ courts.length }} </strong> Courts currently Served in all areas to</div></div>
+  <div class="col px-md-2"><div class="p-3 border bg-light"><strong>{{ total_collected }} </strong> Kshs collected and allocated</div></div>
+  <div class="col px-md-2"><div class="p-3 border bg-light"><strong>{{ unAllocatedMpesa }} </strong> Mpesa Collected unallocated</div></div>
+  <div class="col px-md-2"><div class="p-3 border bg-light"><strong>{{ total_arrears }} </strong> Arrears to be collected</div></div>
+  <div class="col px-md-2"><div class="p-3 border bg-light"><strong>{{ monthly_collections }} </strong> Monthly collections</div></div>
+</div>
 
-
-
-
-   <table>
-    <tr>
-    <td><base-card> <strong>{{ clients.length }}</strong> clients registered</base-card></td>
-    <td><base-card> <strong>{{ courts.length }}</strong> courts served</base-card></td>
-    <td><base-card> <strong>{{ total_collected }} </strong>Kshs Collected</base-card></td>
-    <td><base-card> <strong>{{ total_arrears }} </strong>arrears to be collected </base-card></td>
-    <td><base-card> <strong>{{ monthly_collections }}</strong>  Montly collections </base-card></td>
-    </tr>
-  
-
-   </table>
+ 
    </div>
 </template>
 <script>
 export default {
-    methods: {
-        total_amount (payments) {
-  return payments.reduce((acc, ele) => {
-    return acc + parseInt(ele.amount);
-  }, 0);
-}
 
-    },
     computed: {
         total_collected() {
             return this.payments.reduce((total, item)=>{
@@ -48,6 +38,13 @@ export default {
             },0)
 
         },
+        unAllocatedMpesa() {
+            return this.unallocatedPayments.reduce((total, item)=>{
+                return total + Math.round(item.amount);
+            },0)
+
+        },
+
 
         clients() {
             return  this.$store.getters.clients
@@ -59,7 +56,10 @@ export default {
 
             
         },
-        
+        unallocatedPayments(){
+            return this.$store.getters.unAllocatedMpesaPayments()
+
+        },
         courts() {
             return  this.$store.getters.courts
 
@@ -74,7 +74,10 @@ export default {
      created() {
     this.$store.dispatch('LoadClients');  
     this.$store.dispatch('LoadCourts');  
-    this.$store.dispatch('LoadPayments'); 
+    this.$store.dispatch('LoadPayments');
+    this.$store.dispatch('LoadMpesapayments');
+    
+    
     
     
   },

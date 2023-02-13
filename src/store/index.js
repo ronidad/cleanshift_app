@@ -11,17 +11,16 @@ const store = createStore({
     clientpayment: [],
     clientpaymentz: [],
     clientPayments: [],
-    MpesaPayments:[],
+    MpesaPayments: [],
     requesting_clients: [],
-    messages:[{
-      "phone": ["0725029795", "0724648426"]
-      
-    },
-    {
-      "message":["Test 1", "Test 2"]
-    },
+    messages: [
+      {
+        phone: ["0725029795", "0724648426"],
+      },
+      {
+        message: ["Test 1", "Test 2"],
+      },
     ],
-
   },
   mutations: {
     setUser(state, user) {
@@ -52,11 +51,11 @@ const store = createStore({
     setRevenues(state, revenues) {
       state.revenues = revenues;
     },
-    setMpesapayments(state,MpesaPayments){
-      state.MpesaPayments = MpesaPayments
+    setMpesapayments(state, MpesaPayments) {
+      state.MpesaPayments = MpesaPayments;
     },
-    setRequestingClients(state,requesting_clients){
-      state.requesting_clients=requesting_clients
+    setRequestingClients(state, requesting_clients) {
+      state.requesting_clients = requesting_clients;
     },
   },
   actions: {
@@ -151,7 +150,7 @@ const store = createStore({
           name: responseData[key].client_name,
           phone: responseData[key].phone,
           court: responseData[key].court.CourtName,
-          
+
           approved: responseData[key].Approved,
           reg_date: responseData[key].reg_date,
         };
@@ -240,7 +239,7 @@ const store = createStore({
       for (const key in responseData) {
         const payment = {
           id: key,
-          
+
           name: responseData[key].name,
           phone: responseData[key].phone_number,
           amount: responseData[key].amount,
@@ -275,10 +274,11 @@ const store = createStore({
       state.payments.filter((pay) => pay.court_id == court),
     courtClientsGetter: (state) => (court) =>
       state.clients.filter((pay) => pay.courtId == court),
-      MpesaPayments: (state)=> state.MpesaPayments,
-      RequestingClients: (state)=>state.requesting_clients,
-      messagesGetter: (state)=>state.messages
-      
+    MpesaPayments: (state) => state.MpesaPayments,
+    RequestingClients: (state) => state.requesting_clients,
+    messagesGetter: (state) => state.messages,
+    unAllocatedMpesaPayments: (state) => () =>
+      state.MpesaPayments.filter((pay) => pay.processed == 3),
 
     // clientName: (state) => (client)=> state.clients.filter(pay=pay.client_id=client)
   },
