@@ -26,6 +26,9 @@
         <li>
           <a href="/requesting/clients"><i class="fas fa-map-pin"></i>Req clients </a>
         </li>
+        <li>
+          <a href="/send/sms"><i class="fas fa-map-pin"></i>messages </a>
+        </li>
         <!-- <li> <a href="/dashboard"><i class="fas fa-map-pin"></i>Expenses</a></li> -->
       </ul>
       <ul v-else></ul>

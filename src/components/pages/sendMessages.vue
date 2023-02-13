@@ -5,7 +5,9 @@
   
     <h2>Send message</h2>
 
-    {{ messages }}
+    {{ messages[0].phone }}
+    <br>
+    {{ messages[1].message }}
     <form @submit.prevent="sendSms">
      
       
@@ -98,7 +100,7 @@
       // },
     methods: {
       async sendSms(){
-        const response = await axios.post("https://api.roberms.com/send/sms/", this.formData)
+        const response = await axios.post("https://api.roberms.com/send/sms/", this.messages)
         console.log(response)
      
           this.$router.replace('/clients');

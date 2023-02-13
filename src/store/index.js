@@ -14,17 +14,13 @@ const store = createStore({
     MpesaPayments:[],
     requesting_clients: [],
     messages:[{
-      "phone":"0725029795"
+      "phone": ["0725029795", "0724648426"]
+      
     },
     {
-      "message":"testing message"
+      "message":["Test 1", "Test 2"]
     },
-    {
-      "phone":"0724648426"
-    },
-    {
-      "message":"testing message to ben"
-    }],
+    ],
 
   },
   mutations: {

@@ -5,12 +5,14 @@
 
 
 
+
    <table>
     <tr>
-    <td><base-card>{{ clients.length }} clients registered</base-card></td>
-    <td><base-card>{{ courts.length }} courts served</base-card></td>
-    <td><base-card>10,000 Collected</base-card></td>
-    <td><base-card> {{ clients.length }} arrears to be collected </base-card></td>
+    <td><base-card> <strong>{{ clients.length }}</strong> clients registered</base-card></td>
+    <td><base-card> <strong>{{ courts.length }}</strong> courts served</base-card></td>
+    <td><base-card> <strong>{{ total_collected }} </strong>Kshs Collected</base-card></td>
+    <td><base-card> <strong>{{ total_arrears }} </strong>arrears to be collected </base-card></td>
+    <td><base-card> <strong>{{ monthly_collections }}</strong>  Montly collections </base-card></td>
     </tr>
   
 
@@ -19,12 +21,45 @@
 </template>
 <script>
 export default {
+    methods: {
+        total_amount (payments) {
+  return payments.reduce((acc, ele) => {
+    return acc + parseInt(ele.amount);
+  }, 0);
+}
+
+    },
     computed: {
+        total_collected() {
+            return this.payments.reduce((total, item)=>{
+                return total + item.amount;
+            },0)
+
+        },
+        total_arrears() {
+            return this.clients.reduce((total, item)=>{
+                return total + item.arrears;
+            },0)
+
+        },
+        monthly_collections() {
+            return this.clients.reduce((total, item)=>{
+                return total + item.montlyPayment;
+            },0)
+
+        },
+
         clients() {
             return  this.$store.getters.clients
 
             
         },
+        payments() {
+            return  this.$store.getters.payments
+
+            
+        },
+        
         courts() {
             return  this.$store.getters.courts
 
@@ -39,6 +74,7 @@ export default {
      created() {
     this.$store.dispatch('LoadClients');  
     this.$store.dispatch('LoadCourts');  
+    this.$store.dispatch('LoadPayments'); 
     
     
   },
