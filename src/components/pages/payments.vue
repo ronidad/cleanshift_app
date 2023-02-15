@@ -14,7 +14,7 @@
             </tr>
             </thead> 
             <tbody>
-                <tr v-for="payment in payments" :key="payment.id">
+                <tr v-for="payment in payments.slice().reverse()" :key="payment.id">
                     
                     <!-- <td>{{ payment.client_id}}</td> -->
                     <td>{{ payment.name }}</td>

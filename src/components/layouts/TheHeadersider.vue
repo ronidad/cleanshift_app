@@ -3,7 +3,7 @@
 
   <div class="wrapper">
     <div class="sidebar">
-      <h2>sidebar</h2>
+     <h2><small> CleanShift</small></h2>
       <ul v-if="isLoggedIn">
         <li>
           <a href="/dashboard"><i class="fas fa-home"></i>Dashboard</a>
@@ -36,9 +36,13 @@
     <div class="main_content">
       <div class="header">
         <nav>
-          <h3>
-            <router-link to="#">welcome {{ user.name }}</router-link>
-          </h3>
+         
+            <h4 v-for="name in user" :key="name.id">
+                   Welcome {{ name.name}}
+                    
+                    
+                  </h4>
+            
           <ul>
             <li v-if="isLoggedIn">
               <router-link to="/profile">profile</router-link>
