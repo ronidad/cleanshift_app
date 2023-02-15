@@ -47,6 +47,8 @@
 
 import jsPDF from "jspdf";
 
+require('jspdf-autotable');
+
 export default {
     data() {
     return {

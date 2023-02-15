@@ -56,6 +56,7 @@
 // import axios from 'axios';
 
 import jsPDF from "jspdf";
+require('jspdf-autotable');
 // import autotable from 'jspdf-autotable';
 // import TheVehicle from "../../components/items/TheVehicle.vue"
 
