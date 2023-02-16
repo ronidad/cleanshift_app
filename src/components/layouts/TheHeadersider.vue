@@ -36,19 +36,19 @@
     <div class="main_content">
       <div class="header">
         <nav>
-         
+<!--          
             <h4 v-for="name in user" :key="name.id">
                    Welcome {{ name.name}}
                     
                     
-                  </h4>
+                  </h4> -->
             
           <ul>
             <li v-if="isLoggedIn">
               <router-link to="/profile">profile</router-link>
             </li>
             <li v-else>
-              <router-link to="/register">signup</router-link>
+              <!-- <router-link to="/register">signup</router-link> -->
               <router-link to="/login">login</router-link>
             </li>
             <li v-if="isLoggedIn">
