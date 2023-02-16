@@ -3,7 +3,7 @@
 
   <div class="wrapper">
     <div class="sidebar">
-     <h2><small> CleanShift</small></h2>
+     <h2> Manage </h2>
       <ul v-if="isLoggedIn">
         <li>
           <a href="/dashboard"><i class="fas fa-home"></i>Dashboard</a>
