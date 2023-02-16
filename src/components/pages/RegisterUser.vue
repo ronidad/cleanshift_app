@@ -12,6 +12,10 @@
       <label for="email">Email </label>
       <input class="form-control" type="text" id="email" v-model="formData.email" />
     </div>
+    <div >
+      <label for="email">Phhone </label>
+      <input class="form-control" type="text" id="email" v-model="formData.phone" />
+    </div>
      <div>
       <label for="password">Password </label>
       <input class="form-control" type="password" id="password" v-model="formData.password" />
@@ -37,6 +41,7 @@ export default {
         formData: {
             name: '',
             email: '',
+            phone:'',
             password: '',
             cpassword: '',
 
