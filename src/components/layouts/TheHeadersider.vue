@@ -36,6 +36,7 @@
     <div class="main_content">
       <div class="header">
         <nav>
+          <h4>Welcome to cleanshift management system</h4>
 <!--          
             <h4 v-for="name in user" :key="name.id">
                    Welcome {{ name.name}}
