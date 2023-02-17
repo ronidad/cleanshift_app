@@ -1,5 +1,6 @@
 // import { Router } from "express";
 import { createRouter, createWebHistory } from "vue-router";
+import store from "./store";
 
 // import pages
 import LoginUser from "./components/pages/LoginUser.vue";
@@ -30,7 +31,7 @@ const router = createRouter({
     { path: "/", component: HomePage },
     { path: "/login", component: LoginUser, meta: { auth: false } },
     { path: "/register", component: RegisterUser, meta: { auth: false } },
-    { path: "/profile", component: UserProfile, meta: { auth: true } },
+    { path: "/profile", component: UserProfile, },
     { path: "/dashboard", component: DashBoard, meta: { auth: true }  },
     { path: "/apps", component: DashBoard, meta: { auth: true }  },
     
@@ -42,7 +43,7 @@ const router = createRouter({
     },
     { path: "/clients", component: Clients, meta: { auth: true } },
     { path: "/register/court", component: RegisterCourt, meta: { auth: true } },
-    {path: "/new/client/registration", component: OutsideClient},
+    {path: "/new/client/registration", component: OutsideClient, meta: { auth: true } },
     { path: "/courts", component: Courts, meta: { auth: true }  },
     { path: "/requesting/clients", component: RequestingClients, meta: { auth: true }  },
     { path: "/send/sms", component: SendMessages, meta: { auth: true }  },
@@ -59,27 +60,18 @@ const router = createRouter({
 
   ],
 });
-// router.beforeEach((to, from, next) => {
-//   if (to.meta.auth && !store.getters.isLoggedIn )
-//   {
-//     next('login')
-
-//   } else  if ( !to.meta.auth && store.getters.isLoggedIn)
-//   {
-//     next('apps')
-
-//   }
-
-//   else next()
-// })
-// router.beforeEach((to, from, next)=>{
-//   if 
-//   (
-//     to.meta.auth
-//     ){
-//       next("/login")
-//     }
-   
-// });
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.auth)) {
+    // this route requires auth, check if logged in
+    // if not, redirect to login page.
+    if (!store.getters.isLoggedIn) {
+      next({ path: '/Login' })
+    } else {
+      next() // go to wherever I'm going
+    }
+  } else {
+    next() // does not require auth, make sure to always call next()!
+  }
+})
 
 export default router;

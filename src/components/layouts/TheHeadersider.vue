@@ -26,9 +26,9 @@
         <li>
           <a href="/requesting/clients"><i class="fas fa-map-pin"></i>Req clients </a>
         </li>
-        <li>
+        <!-- <li>
           <a href="/send/sms"><i class="fas fa-map-pin"></i>messages </a>
-        </li>
+        </li> -->
         <!-- <li> <a href="/dashboard"><i class="fas fa-map-pin"></i>Expenses</a></li> -->
       </ul>
       <ul v-else></ul>
@@ -53,7 +53,7 @@
               <router-link to="/login">login</router-link>
             </li>
             <li v-if="isLoggedIn">
-              <button @click="handleLogout">logout</button>
+              <router-link to="/" @click="handleLogout">logout</router-link>
             </li>
             <!-- <li v-if="isLoggedIn">
           <router-link to="/register">sign Uo</router-link>

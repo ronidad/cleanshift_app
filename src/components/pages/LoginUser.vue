@@ -17,6 +17,7 @@
      
     
     <base-button>Login</base-button>
+    <muted> <router-link to="/">Home page</router-link> </muted>
   </form>
   </base-card>
 </div>
