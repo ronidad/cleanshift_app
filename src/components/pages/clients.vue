@@ -12,12 +12,13 @@
 <table class="table table-striped table-bordered">
         <thead>
             <tr >
-                <th><h3>Name</h3></th>
-                <th><h3>phone</h3></th>
-                <th><h3>court</h3></th>
-                <th><h3>Monthly</h3></th>
-                <th><h3>Arrears</h3></th>
-                <th><h3>Is Active</h3></th>
+                <th>Name</th>
+                <th>phone</th>
+                <th>acc. No</th>
+                <th>court</th>
+                <th>Monthly</th>
+                <th>arrears</th>
+                <th>Is Active</th>
             </tr>
             </thead> 
             <tbody>
@@ -27,6 +28,7 @@
                     
                     <!-- <td>{{ client.name}}</td>  -->
                     <td>{{ client.phone}}</td>
+                    <td>{{ client.client_id}}</td>
                     <td>{{ client.court}}</td>
                     <td>{{ client.montlyPayment}}</td>
                     <td>{{ client.arrears}}</td>
@@ -66,7 +68,7 @@ export default {
 
         },
         filteredClients() {
-      return this.clients.filter((client)=>client.name.toLowerCase().includes(this.search.toLowerCase())|client.phone.toString().includes(this.search.toLowerCase())).slice(0,6)
+      return this.clients.filter((client)=>client.name.toLowerCase().includes(this.search.toLowerCase())| client.client_id.toString().includes(this.search.toLocaleLowerCase())| client.phone.toString().includes(this.search.toLowerCase())).slice(0,6)
         
        
     },
