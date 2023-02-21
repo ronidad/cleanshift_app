@@ -3,7 +3,7 @@
     <the-headersider></the-headersider>
     <base-card>
     <div class="form-outline">
-  <input type="search" id="form1" class="form-control" v-model="search" placeholder="Search client"  aria-label="Search" />
+  <input type="search" id="form1" class="form-control" v-model="search" placeholder="Search client"  aria-label="Search"  />
 </div>
 </base-card>
     <base-card>

@@ -23,6 +23,7 @@ import courtPayments from "./components/pages/courtPayments";
 import courtClients from "./components/pages/courtClients";
 import RequestingClients from "./components/pages/requestingClients";
 import SendMessages from "./components/pages/sendMessages";
+import editClient from "./components/pages/editClient"
 // import store from './store'
 
 const router = createRouter({
@@ -34,6 +35,7 @@ const router = createRouter({
     { path: "/profile", component: UserProfile, },
     { path: "/dashboard", component: DashBoard, meta: { auth: true }  },
     { path: "/apps", component: DashBoard, meta: { auth: true }  },
+
     
     { path: "/reports", component: Reports, meta: { auth: true }  },
     {
@@ -57,6 +59,8 @@ const router = createRouter({
     { path: "/client/payments/:client", component: ClientPayments, meta: { auth: true }  },
     { path: "/court/payments/:court", component: courtPayments, meta: { auth: true }  },
     { path: "/court/clients/:court", component: courtClients, meta: { auth: true }  },
+    { path: "/edit/client/:client", component: editClient, meta: { auth: true }  },
+
 
   ],
 });

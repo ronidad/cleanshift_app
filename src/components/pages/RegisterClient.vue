@@ -3,17 +3,26 @@
 <the-headersider></the-headersider>
 <base-card>
 
-  <h2>Register client</h2>
+ <strong> Register client</strong>
   <form @submit.prevent="createClient">
-    <div class="form-control">
+    <div >
       <label for="name"> name </label>
       <input  class="form-control" type="text" id="client_name" v-model="formData.client_name" />
     </div>
-    <div class="form-control"> 
+    <div> 
       <label for="phone">phone </label>
       <input  class="form-control" type="text" id="phone" v-model="formData.phone" v-model.trim="phone" />
     </div>
-    <div class="form-control">
+    
+    <div> 
+      <label for="phone">Monthly bill </label>
+      <input  class="form-control" type="text" id="phone" v-model="formData.monthly_bill" v-model.trim="phone" />
+    </div>
+    <div > 
+      <label for="phone">Initial bill </label>
+      <input  class="form-control" type="text" id="phone" v-model="formData.initial_bill" v-model.trim="phone" />
+    </div>
+    <div >
     <div class="field">
         <label class="label">court</label>
         <div class="select">
@@ -57,6 +66,8 @@ export default {
         formData: {
           client_name: '',
           phone: '',
+          monthly_bill:'',
+          starting_bill: '',
           court:'',
             
             
