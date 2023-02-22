@@ -15,12 +15,12 @@
     </div>
     
     <div> 
-      <label for="phone">Monthly bill </label>
-      <input  class="form-control" type="text" id="phone" v-model="formData.monthly_payment" />
+      <label for="monthly_payment">Monthly bill </label>
+      <input  class="form-control" type="text" id="monthly_payment" v-model="formData.monthly_payment" />
     </div>
     <div > 
-      <label for="phone">Initial bill </label>
-      <input  class="form-control" type="text" id="phone" v-model="formData.initial_bill" />
+      <label for="starting_bill">Starting bill </label>
+      <input  class="form-control" type="text" id="starting_bill" v-model="formData.starting_bill" />
     </div>
     <div >
     <div class="field">
