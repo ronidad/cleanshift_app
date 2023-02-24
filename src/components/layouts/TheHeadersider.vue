@@ -24,6 +24,9 @@
           <a href="/mpesa/payments"><i class="fas fa-map-pin"></i>Mpesa </a>
         </li>
         <li>
+          <a href="/messages"><i class="fas fa-map-pin"></i>Messages </a>
+        </li>
+        <li>
           <a href="/requesting/clients"><i class="fas fa-map-pin"></i>Req clients </a>
         </li>
         <!-- <li>

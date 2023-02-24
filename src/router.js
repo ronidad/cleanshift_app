@@ -22,7 +22,9 @@ import ClientPayments from "./components/pages/ClientPayments";
 import courtPayments from "./components/pages/courtPayments";
 import courtClients from "./components/pages/courtClients";
 import RequestingClients from "./components/pages/requestingClients";
-import SendMessages from "./components/pages/sendMessages";
+import Messages from "./components/pages/messages";
+import simpleSms from "./components/pages/simpleSms";
+import smsReport from "./components/pages/smsReport";
 import editClient from "./components/pages/editClient"
 // import store from './store'
 
@@ -48,7 +50,9 @@ const router = createRouter({
     {path: "/new/client/registration", component: OutsideClient, meta: { auth: true } },
     { path: "/courts", component: Courts, meta: { auth: true }  },
     { path: "/requesting/clients", component: RequestingClients, meta: { auth: true }  },
-    { path: "/send/sms", component: SendMessages, meta: { auth: true }  },
+    { path: "/messages", component: Messages, meta: { auth: true }  },
+    { path: "/send/simple/sms", component: simpleSms, meta: { auth: true }  },
+    { path: "/sms/report", component: smsReport, meta: { auth: true }  },
     {
       path: "/receive/payment",
       component: ReceivePayment,
