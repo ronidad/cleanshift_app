@@ -38,7 +38,7 @@
            <div class="card" style="-webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 10%); box-shadow: 0 1px 2px rgb(0 0 0 / 10%);">
                <div class="bs-component">
                    <div class="card-header">
-                   <h5 class="mb-3" id="buttons">Vie sent messages</h5>
+                   <h5 class="mb-3" id="buttons">View sent messages</h5>
                    
                    </div>
                <div class="card-body">

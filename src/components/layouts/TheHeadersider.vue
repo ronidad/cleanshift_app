@@ -10,7 +10,7 @@
         </li>
         <!-- <li> <a href="#"><i class="fas fa-user"></i>Vehicles</a></li> -->
         <li>
-          <a href="/courts"><i class="fas fa-address-card"></i>Courts</a>
+          <a href="/courts"><i class="fas fa-solid fa-landmark"></i>Courts</a> 
         </li>
         <li>
           <a href="/clients"><i class="fas fa-project-diagram"></i>clients</a>
@@ -18,16 +18,16 @@
         <!-- <li> <a href="/dashboard"><i class="fas fa-blog"></i>Invoices</a></li> -->
         <!-- <li> <a href="#"><i class="fas fa-address-book"></i>Admins</a></li> -->
         <li>
-          <a href="/payments"><i class="fas fa-map-pin"></i>Payments</a>
+          <a href="/payments"><i class="fas	fa fa-paypal"></i>Payments</a>
         </li>
         <li>
-          <a href="/mpesa/payments"><i class="fas fa-map-pin"></i>Mpesa </a>
+          <a href="/mpesa/payments"><i class="fa fa-money"></i>Mpesa </a>
         </li>
         <li>
-          <a href="/messages"><i class="fas fa-map-pin"></i>Messages </a>
+          <a href="/messages"><i class="fas fa-solid fa-message"></i>Messages </a>
         </li>
         <li>
-          <a href="/requesting/clients"><i class="fas fa-map-pin"></i>Req clients </a>
+          <a href="/requesting/clients"><i class="fas fa-people-arrows"></i>Req clients </a>
         </li>
         <!-- <li>
           <a href="/send/sms"><i class="fas fa-map-pin"></i>messages </a>
