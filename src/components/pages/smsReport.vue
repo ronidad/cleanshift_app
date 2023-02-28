@@ -25,7 +25,7 @@
                     <!-- <td>{{ client.name}}</td>  -->
                     <td>{{ message.dest_msisdn}}</td>
                     <td>{{ message.message}}</td>
-                    <td>{{ message.sent_date}}</td>
+                    <td>{{ new Date(message.sent_date).toLocaleString('nl-NL') }}</td>
                    
                     
                 </tr>
