@@ -58,7 +58,7 @@ export default {
         },
         
         filteredMessages() {
-      return this.messages.filter((message)=>message.message.toLowerCase().includes(this.search.toLowerCase())| message.msisdn.toString().includes(this.search.toLocaleLowerCase())).slice(0,15)
+      return this.messages.filter((message)=>message.message.toLowerCase().includes(this.search.toLowerCase())| message.dest_msisdn.toString().includes(this.search.toLowerCase())).slice(0,15)
         
        
     },

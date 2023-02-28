@@ -82,7 +82,7 @@
         console.log(response);
         console.log(this.formData)
   
-        this.$router.replace("/clients");
+        this.$router.replace("/sms/report");
         console.log(this.formData);
       },
     },
