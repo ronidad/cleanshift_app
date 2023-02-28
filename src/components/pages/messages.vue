@@ -2,10 +2,58 @@
     <div>
   <the-headersider></the-headersider>
   <base-card>
+  <div class="row">
+           <div class="col-lg-6">
+           <div class="bs-component">
+           <div class="card" style="-webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 10%); box-shadow: 0 1px 2px rgb(0 0 0 / 10%);">
+               <div class="card-header">
+                   <h5 class="mb-3" id="buttons">Send simple Message</h5>
+                  
+               </div>
+               <div class="card-body">
+                <small>Enter numbers separated by new lines</small> 
+                <br>
+                <!-- <base-button to="/send/simple/sms">Continue</base-button> -->
+                   <a class="btn btn-primary" href="/send/simple/sms">Continue</a>
+               </div>
+           </div>
+           </div>
+       </div>
+<!-- 
+       <div class="col-lg-4">
+           <div class="card" style="-webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 10%); box-shadow: 0 1px 2px rgb(0 0 0 / 10%);">
+               <div class="bs-component">
+                   <div class="card-header">
+                   <h5 class="mb-3" id="buttons">Personalized Messages</h5>
+                   </div>
+               <div class="card-body">
+                   <p></p>
+                   <a class="btn btn-primary" href="/personalized/sms/menu">Continue</a>
+               </div>
+               </div>
+           </div>
+       </div> -->
+
+       <div class="col-lg-6">
+           <div class="card" style="-webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 10%); box-shadow: 0 1px 2px rgb(0 0 0 / 10%);">
+               <div class="bs-component">
+                   <div class="card-header">
+                   <h5 class="mb-3" id="buttons">Vie sent messages</h5>
+                   
+                   </div>
+               <div class="card-body">
+                <small>View and search sent messages</small> 
+                <br>
+                   <a class="btn btn-primary" href="/sms/report">Continue</a>
+               </div>
+               </div>
+           </div>
+       </div>
+    </div>
   
-    <router-link to="/send/simple/sms">Send simple message</router-link>
-    <br>
-    <router-link to="/sms/report">View sent messages </router-link>
+ 
+  
+   
     </base-card>
   </div>
   </template>

@@ -6,6 +6,7 @@
   
         {{ messages[0].phone }}
         <br />
+        
         {{ messages[1].message }} -->
         <form @submit.prevent="sendSms">
           <div class="form-control">
@@ -28,7 +29,7 @@
               class="form-control"
               v-model="formData.message"
               id="message"
-              placeholder="Enter phone number here"
+              placeholder="Enter message here"
             ></textarea>
             <!-- <input type="textarea" id="textarea" v-model="formData.message" /> -->
           </div>
@@ -47,24 +48,24 @@
         user: "",
   
         formData: {
-          dest_msisdn: [],
+          dest_msisdn: "",
           message: "",
         },
       };
     },
-    computed: {
-      phones() {
-        return this.$store.getters.clients;
-      },
-      courts() {
-        return this.$store.getters.courts;
-      },
-      messages() {
-        return this.$store.getters.messagesGetter;
-      },
-    },
+    // computed: {
+    //   phones() {
+    //     return this.$store.getters.clients;
+    //   },
+    //   courts() {
+    //     return this.$store.getters.courts;
+    //   },
+    //   messages() {
+    //     return this.$store.getters.messagesGetter;
+    //   },
+    // },
     created() {
-      this.$store.dispatch("LoadCourts");
+      // this.$store.dispatch("LoadCourts");
     },
     //  mounted() {
     // let user = localStorage.getItem('user');

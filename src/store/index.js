@@ -13,14 +13,7 @@ const store = createStore({
     clientPayments: [],
     MpesaPayments: [],
     requesting_clients: [],
-    messages: [
-      {
-        phone: ["0725029795", "0724648426"],
-      },
-      {
-        message: ["Test 1", "Test 2"],
-      },
-    ],
+    messages: [],
   },
   mutations: {
     setUser(state, user) {
@@ -57,6 +50,9 @@ const store = createStore({
     setRequestingClients(state, requesting_clients) {
       state.requesting_clients = requesting_clients;
     },
+    setMessages (state,messages){
+      state.messages = messages
+    }
   },
   actions: {
     clearToken(context) {
@@ -95,6 +91,32 @@ const store = createStore({
         courts.push(court);
       }
       context.commit("setCourts", courts);
+    },
+    async LoadMessages(context) {
+      const url = `https://api.roberms.com/get/messages`;
+
+      const response = await fetch(url, {
+        mode: "cors",
+        // credentials: "include",
+        headers: {
+          "Access-Control-Allow-Origin": true,
+        },
+      });
+      const responseData = await response.json();
+      if (!response.ok) {
+        //
+      }
+      const messages = [];
+      for (const key in responseData) {
+        const message = {
+          id: key,
+          dest_msisdn: responseData[key].dest_msisdn,
+          message: responseData[key].message,
+          sent_date: responseData[key].sent_date,
+        };
+        messages.push(message);
+      }
+      context.commit("setMessages", messages);
     },
     async LoadClients(context) {
       const url = `https://api.roberms.com/get/clients`;
@@ -279,6 +301,7 @@ const store = createStore({
     messagesGetter: (state) => state.messages,
     unAllocatedMpesaPayments: (state) => () =>
       state.MpesaPayments.filter((pay) => pay.processed == 3),
+      
 
     // clientName: (state) => (client)=> state.clients.filter(pay=pay.client_id=client)
   },
