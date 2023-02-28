@@ -12,9 +12,9 @@
 <table class="table table-striped table-bordered">
         <thead>
             <tr >
-               <strong><th>Phone</th></strong> 
-               <strong><th>Message</th></strong> 
-               <strong><th>Sent date</th></strong> 
+              <th><strong>Phone</strong> </th>
+              <th><strong>Message</strong> </th>
+              <th><strong>Sent date</strong></th> 
                 
             </tr>
             </thead> 
