@@ -1,5 +1,86 @@
 <template>
     <div>
+    <the-headersider></the-headersider>
+    <div class="container-fluid">
+
+  
+   <div class="fw-b fs-3">
+    Dashboard
+
+   </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="card text-dark bg-light h-100">
+          <div class="card-header">Clients</div>
+          <div class="card-body">
+            <h5 class="card-title">{{ clients.length }} </h5>
+            <small>
+              <p class="card-text"> Total clients registered.</p>
+            </small>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card text-dark bg-light h-100">
+          <div class="card-header">Courts</div>
+          <div class="card-body">
+            <h5 class="card-title">{{ courts.length }}</h5>
+            <small>
+              <p class="card-text"> Total courts served.</p>
+            </small>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card text-dark bg-light h-100">
+          <div class="card-header">Revenue</div>
+          <div class="card-body">
+            <h5 class="card-title">Kshs {{ total_collected  }}</h5>
+            <small>
+              <p class="card-text"> Amount collected and allocated.</p>
+            </small>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card text-dark bg-light h-100">
+          <div class="card-header">Mpesa</div>
+          <div class="card-body">
+            <h5 class="card-title">Kshs {{ unAllocatedMpesa }}</h5>
+            <small>
+              <p class="card-text">  collected but not allocated to clients.</p>
+            </small>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card text-dark bg-light h-100">
+          <div class="card-header">Arrears</div>
+          <div class="card-body">
+            <h5 class="card-title">Kshs {{ total_arrears }}</h5>
+            <small>
+              <p class="card-text">  arreas to be collected</p>
+            </small>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card text-dark bg-light h-100">
+          <div class="card-header">Monthly </div>
+          <div class="card-body">
+            <h5 class="card-title">Kshs {{ monthly_collections }}</h5>
+            <small>
+              <p class="card-text">  total revenues to be collected monthly.</p>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+    
+  </div>
+    <!-- <div>
         
 <the-headersider></the-headersider>
 
@@ -14,7 +95,7 @@
 </div>
 
  
-   </div>
+   </div> -->
 </template>
 <script>
 export default {

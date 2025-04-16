@@ -1,73 +1,40 @@
 <template>
-  <!-- <side-bar></side-bar>   -->
-
   <div class="wrapper">
-    <div class="sidebar">
-     <h2> Manage </h2>
-      <ul v-if="isLoggedIn">
-        <li>
-          <a href="/dashboard"><i class="fas fa-home"></i>Dashboard</a>
-        </li>
-        <!-- <li> <a href="#"><i class="fas fa-user"></i>Vehicles</a></li> -->
-        <li>
-          <a href="/courts"><i class="fas fa-solid fa-landmark"></i>Courts</a> 
-        </li>
-        <li>
-          <a href="/clients"><i class="fas fa-project-diagram"></i>clients</a>
-        </li>
-        <!-- <li> <a href="/dashboard"><i class="fas fa-blog"></i>Invoices</a></li> -->
-        <!-- <li> <a href="#"><i class="fas fa-address-book"></i>Admins</a></li> -->
-        <li>
-          <a href="/payments"><i class="fas	fa fa-paypal"></i>Payments</a>
-        </li>
-        <li>
-          <a href="/mpesa/payments"><i class="fa fa-money"></i>Mpesa </a>
-        </li>
-        <li>
-          <a href="/messages"><i class="fas fa-solid fa-message"></i>Messages </a>
-        </li>
-        <li>
-          <a href="/requesting/clients"><i class="fas fa-people-arrows"></i>Req clients </a>
-        </li>
-        <!-- <li>
-          <a href="/send/sms"><i class="fas fa-map-pin"></i>messages </a>
-        </li> -->
-        <!-- <li> <a href="/dashboard"><i class="fas fa-map-pin"></i>Expenses</a></li> -->
-      </ul>
-      <ul v-else></ul>
-    </div>
     <div class="main_content">
       <div class="header">
         <nav>
-          <h4>Welcome to cleanshift management system</h4>
-<!--          
-            <h4 v-for="name in user" :key="name.id">
-                   Welcome {{ name.name}}
-                    
-                    
-                  </h4> -->
-            
-          <ul>
+          <p>Welcome to cleanshift management system</p>
+
+          <!-- Hamburger Icon -->
+          <div class="menu-toggle" @click="toggleMenu">
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
+
+          <!-- Navigation Links -->
+          <ul :class="{ show: menuOpen }">
             <li v-if="isLoggedIn">
-              <router-link to="/profile">profile</router-link>
+              <router-link to="/profile">Profile</router-link>
+            </li>
+            <li v-if="isLoggedIn">
+              <router-link to="/courts">Courts</router-link>
+            </li>
+            <li v-if="isLoggedIn">
+              <router-link to="/clients">Clients</router-link>
+            </li>
+            <li v-if="isLoggedIn">
+              <router-link to="/payments">Payments</router-link>
+            </li>
+            <li v-if="isLoggedIn">
+              <router-link to="/mpesa/payments">Mpesa</router-link>
             </li>
             <li v-else>
-              <!-- <router-link to="/register">signup</router-link> -->
-              <router-link to="/login">login</router-link>
+              <router-link to="/login">Login</router-link>
             </li>
             <li v-if="isLoggedIn">
-              <router-link to="/" @click="handleLogout">logout</router-link>
+              <router-link to="/" @click="handleLogout">Logout</router-link>
             </li>
-            <!-- <li v-if="isLoggedIn">
-          <router-link to="/register">sign Uo</router-link>
-        </li> -->
-
-            <!-- <li v-if="isLoggedIn">
-          <base-button @click="logout">logout</base-button>
-        </li> -->
           </ul>
         </nav>
-        <!-- <router-link>logout</router-link> -->
       </div>
       <div class="main_content">
         <div></div>
@@ -75,38 +42,39 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
+  data() {
+    return {
+      menuOpen: false,
+      user: "",
+    };
+  },
   computed: {
     isLoggedIn() {
       return this.$store.getters.isLoggedIn;
     },
   },
-
   methods: {
+    toggleMenu() {
+      this.menuOpen = !this.menuOpen;
+    },
     handleLogout() {
       this.$store.dispatch("clearToken");
-      localStorage.removeItem("token"); // clear your user's token from localstorage
-      localStorage.removeItem("user"); // clear your user from localstorage
-
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
       this.$router.push("/");
     },
   },
-  data() {
-    return {
-      user: "",
-    };
-  },
   mounted() {
-    let user = localStorage.getItem("user");
-    this.user = JSON.parse(user);
-
     setInterval(() => {
       this.handleLogout();
     }, 3600000);
   },
 };
 </script>
+
 <style>
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap");
 
@@ -118,81 +86,84 @@ export default {
   text-decoration: none;
   font-family: "Josefin Sans", sans-serif;
 }
+
 body {
   background: #fdfbfb;
-  margin-left: 220px;
-}
-.wrapper {
-  display: flex;
-  position: relative;
 }
 
-.wrapper .sidebar {
-  position: fixed;
-  width: 200px;
-  height: 100%;
-  background: rgb(35, 48, 66);
-  padding: 30px 0;
+.wrapper {
+  display: flex;
+  flex-direction: column;
 }
-.wrapper .sidebar h2 {
-  color: #ffff;
-  text-transform: uppercase;
-  text-align: center;
-  margin-bottom: 30px;
-}
-.wrapper .sidebar ul li {
-  padding: 2px;
-  border-bottom: 1px solid rgb(0, 0, 0, 0.05);
-  border-top: 1px solid rgb(225, 225, 225, 0.05);
-}
-.wrapper .sidebar ul li a {
-  color: #bdb8d7;
-  display: block;
-}
-.wrapper .sidebar ul li .fas {
-  width: 25px;
-}
-.wrapper .sidebar ul li :hover {
-  background: #594f8d;
-}
-.wrapper .sidebar ul li :hover a {
-  color: #ffff;
-}
-.wrapper .main_content {
+
+.main_content {
   width: 100%;
-  margin-left: -20px;
-  margin-top: 20px;
+  padding: 20px;
 }
-.wrapper .main_content .header {
-  /* padding: 20px; */
+
+.header {
   background: rgba(249, 251, 252, 0.973);
   color: #717171;
   border-bottom: 1px solid #e0e4e8;
   height: 3rem;
-  width: 101%;
-  margin-top: -15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.header nav {
+
+nav {
   width: 90%;
   margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
-.header ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.header a {
-  text-decoration: none;
 
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  border: 1px solid transparent;
+nav ul {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+nav ul li {
+  display: block;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  color: #333;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 3.5rem;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 6px;
+    z-index: 1000;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
 }
 
 table,
@@ -201,14 +172,10 @@ td {
   border: 1px solid;
   padding: 7px;
 }
+
 table {
   width: 90%;
-  border: 1px solid;
   border-collapse: collapse;
-}
-table,
-tr {
   color: #717171;
 }
-/* tr:hover {background-color: #717070;} */
 </style>

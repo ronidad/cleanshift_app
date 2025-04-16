@@ -15,6 +15,7 @@ import OutsideClient from "./components/pages/newClients";
 import ReceivePayment from "./components/pages/ReceivePayments";
 import Payments from "./components/pages/payments";
 import MpesaPayments from "./components/pages/mpesaPayments";
+// import smstoAll from "./components/pages/smstoAll"
 
 import Reports from "./components/pages/reports";
 import Courts from "./components/pages/courts";
@@ -25,7 +26,9 @@ import RequestingClients from "./components/pages/requestingClients";
 import Messages from "./components/pages/messages";
 import simpleSms from "./components/pages/simpleSms";
 import smsReport from "./components/pages/smsReport";
-import editClient from "./components/pages/editClient"
+// import editClient from "./components/pages/editClient"
+import editClient from "./components/pages/editClient.vue";
+
 // import store from './store'
 
 const router = createRouter({
@@ -53,6 +56,7 @@ const router = createRouter({
     { path: "/messages", component: Messages, meta: { auth: true }  },
     { path: "/send/simple/sms", component: simpleSms, meta: { auth: true }  },
     { path: "/sms/report", component: smsReport, meta: { auth: true }  },
+    // {path: "/send/sms/all", component:smstoAll, meta: {auth:true}},
     {
       path: "/receive/payment",
       component: ReceivePayment,
@@ -63,7 +67,9 @@ const router = createRouter({
     { path: "/client/payments/:client", component: ClientPayments, meta: { auth: true }  },
     { path: "/court/payments/:court", component: courtPayments, meta: { auth: true }  },
     { path: "/court/clients/:court", component: courtClients, meta: { auth: true }  },
-    { path: "/edit/client/:client", component: editClient, meta: { auth: true }  },
+    { path: "/edit/client/:clientId", component: editClient, meta: { auth: true }  },
+    // { path: "/edit/client/:clientId", component: editClient },
+
 
 
   ],

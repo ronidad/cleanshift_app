@@ -14,6 +14,7 @@ const store = createStore({
     MpesaPayments: [],
     requesting_clients: [],
     messages: [],
+    numbers:["073322", "099883"],
   },
   mutations: {
     setUser(state, user) {
@@ -52,6 +53,9 @@ const store = createStore({
     },
     setMessages (state,messages){
       state.messages = messages
+    },
+    setNumber(state,numbers){
+      state.numbers=numbers
     }
   },
   actions: {
@@ -241,6 +245,33 @@ const store = createStore({
       }
       context.commit("setPayments", payments);
     },
+    async LoadNumbers(context) {
+      const url = `https://api.roberms.com/get/numbers`;
+
+      const response = await fetch(url, {
+        mode: "cors",
+        // credentials: "include",
+        headers: {
+          "Access-Control-Allow-Origin": true,
+        },
+      });
+      const responseData = await response.json();
+      if (!response.ok) {
+        //
+      }
+      console.log(responseData);
+      const numbers = [];
+
+      for (const key in responseData) {
+        const number = {
+          id: key,
+          phone: responseData[key].phone,
+          
+        };
+        numbers.push(number);
+      }
+      context.commit("setNumbers", numbers);
+    },
     async LoadMpesapayments(context) {
       const url = `https://api.roberms.com/get/mpesapayments`;
 
@@ -281,6 +312,7 @@ const store = createStore({
     },
 
     clients: (state) => state.clients,
+    phone_numbers: (state) => state.numbers,
     revenues: (state) => state.revenues,
     courts: (state) => state.courts,
     payments: (state) => state.payments,

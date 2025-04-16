@@ -19,6 +19,9 @@
                 <th>Monthly</th>
                 <th>arrears</th>
                 <th>Is Active</th>
+                <th>Actions</th>
+
+                
             </tr>
             </thead> 
             <tbody>
@@ -33,6 +36,9 @@
                     <td>{{ client.montlyPayment}}</td>
                     <td>{{ client.arrears}}</td>
                     <td>{{ client.isActive}}</td>
+                    <td><a :href="'/edit/client/' + client.client_id">Edit</a></td>
+
+
                     
                 </tr>
             </tbody>
