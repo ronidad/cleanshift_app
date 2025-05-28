@@ -13,7 +13,7 @@
           <!-- Navigation Links -->
           <ul :class="{ show: menuOpen }">
             <li v-if="isLoggedIn">
-              <router-link to="/profile">Profile</router-link>
+              <router-link to="/dashboard">Dashboard</router-link>
             </li>
             <li v-if="isLoggedIn">
               <router-link to="/courts">Courts</router-link>
