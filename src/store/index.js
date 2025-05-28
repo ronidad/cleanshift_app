@@ -316,7 +316,7 @@ const store = createStore({
     revenues: (state) => state.revenues,
     courts: (state) => state.courts,
     payments: (state) => state.payments,
-    // ClientPayments: (state) => state.clientPayments,
+    ClientPayments: (state) => state.clientPayments,
 
     PaymentGetter: (state) => (client) =>
       state.payments.filter((pay) => pay.client_id == client),

@@ -31,8 +31,8 @@
             </tr>
             </thead> 
             <tbody>
-                <tr v-for="payment in clientpayments" :key="payment.id">
-                    <td>{{ new Date(payment.date).toLocaleString('nl-NL') }}</td>
+                <tr v-for="payment in filteredMpesaPayments" :key="payment.id">
+                    <td>{{ new Date(payment.payment_date).toLocaleString('nl-NL').split(",")[0] }}</td>
                     
                     <td>{{ payment.amount }}</td>
                     
@@ -75,6 +75,11 @@ export default {
     client_id() {
       return this.$route.params.client
     },
+    filteredMpesaPayments() {
+    const client = this.$route.params.client;
+    return this.$store.getters.MpesaPayments.filter(payment => payment.account_number === client);
+  
+},
      clientName() {
       return this.$store.getters.clientName(this.$route.params.client)
     },
@@ -94,11 +99,11 @@ export default {
 
   },
   created() {
-      this.$store.dispatch('LoadPayments');   
+      this.$store.dispatch('LoadMpesapayments');   
       this.$store.dispatch('LoadClients'); 
-      let currentClient = localStorage.getItem('user')
-      this.currentClient = JSON.parse(currentClient)
-      console.log(this.clientpayments)
+      // let currentClient = localStorage.getItem('user')
+      // this.currentClient = JSON.parse(currentClient)
+      // console.log(this.clientpayments)
       
   
   //   const url = `http://localhost:5000/get/payments/` + this.client_id;
