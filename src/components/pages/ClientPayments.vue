@@ -131,7 +131,7 @@ export default {
        var rowst = [];
        
 
-        this.clientpayments.forEach(payment => {      
+        this.filteredMpesaPayments.forEach(payment => {      
         var temp = [new Date(payment.date).toLocaleString('nl-NL') ,payment.amount, payment.type, payment.reference];
         rowst.push(temp);
          }); 
