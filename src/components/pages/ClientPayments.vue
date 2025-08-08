@@ -126,13 +126,13 @@ export default {
     downloadPDF(){
         var pdf=new jsPDF();
 
-      var colt = ["Date","Amount", "payment Type", "Reference"];
+      var colt = ["Date","Amount", "Reference"];
        
        var rowst = [];
        
 
         this.filteredMpesaPayments.forEach(payment => {      
-        var temp = [ new Date(payment.payment_date).toLocaleString('nl-NL').split(",")[0] ,payment.amount, payment.type, payment.reference];
+        var temp = [ new Date(payment.payment_date).toLocaleString('nl-NL').split(",")[0] ,payment.amount, payment.reference];
         rowst.push(temp);
          }); 
           
