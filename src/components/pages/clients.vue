@@ -18,6 +18,7 @@
                 <th>court</th>
                 <th>Monthly</th>
                 <th>arrears</th>
+                  <th>Reg Date</th>
                 <th>Is Active</th>
                 <th>Actions</th>
 
@@ -35,6 +36,7 @@
                     <td>{{ client.court}}</td>
                     <td>{{ client.montlyPayment}}</td>
                     <td>{{ client.arrears}}</td>
+                     <td>{{ client.reg_date}}</td>
                     <td>{{ client.isActive}}</td>
                     <td><a :href="'/edit/client/' + client.client_id">Edit</a></td>
 

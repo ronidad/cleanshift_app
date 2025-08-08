@@ -297,6 +297,7 @@ const store = createStore({
           phone: responseData[key].phone_number,
           amount: responseData[key].amount,
           payment_date: responseData[key].payment_date,
+          reg_date: responseData[key].reg_date,
           account_number: responseData[key].account_number,
           reference: responseData[key].payment_reference,
           processed: responseData[key].processed,
