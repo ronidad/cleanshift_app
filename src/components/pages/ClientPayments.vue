@@ -132,7 +132,7 @@ export default {
        
 
         this.filteredMpesaPayments.forEach(payment => {      
-        var temp = [(payment.split("T")[0]) ,payment.amount, payment.type, payment.reference];
+        var temp = [ new Date(payment.payment_date).toLocaleString('nl-NL').split(",")[0] ,payment.amount, payment.type, payment.reference];
         rowst.push(temp);
          }); 
           
