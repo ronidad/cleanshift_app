@@ -234,5 +234,13 @@ total_overpayment() {
     grid-area: theader;
     grid-area: theader;
 }
+.row {
+  margin-bottom: 10px; /* 10px gap between rows */
+}
+.rows-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* neat modern way */
+}
 
 </style>
