@@ -64,6 +64,18 @@
           </div>
         </div>
       </div>
+
+            <div class="col-md-2">
+        <div class="card text-dark bg-light h-100">
+          <div class="card-header">Overpayment</div>
+          <div class="card-body">
+            <h5 class="card-title">Kshs {{ total_overpayment }}</h5>
+            <small>
+              <p class="card-text">  Overpayment</p>
+            </small>
+          </div>
+        </div>
+      </div>
       <div class="col-md-2">
         <div class="card text-dark bg-light h-100">
           <div class="card-header">Monthly </div>
@@ -107,12 +119,24 @@ export default {
             },0)
 
         },
-        total_arrears() {
-            return this.clients.reduce((total, item)=>{
-                return total + item.arrears;
-            },0)
+        // total_arrears() {
+        //     return this.clients.reduce((total, item)=>{
+        //         return total + item.arrears;
+        //     },0)
 
-        },
+        // },
+        total_arrears() {
+    return this.clients
+        .filter(item => item.arrears > 0)
+        .reduce((total, item) => total + item.arrears, 0);
+},
+total_overpayment() {
+    return this.clients
+        .filter(item => item.arrears < 0)
+        .reduce((total, item) => total + item.arrears, 0);
+},
+
+
         monthly_collections() {
             return this.clients.reduce((total, item)=>{
                 return total + item.montlyPayment;
